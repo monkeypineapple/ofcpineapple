@@ -1,8 +1,8 @@
 import { INITIAL_DEAL, REMOVE_HAND_CARD, CLEAR_HAND, REMOVE_PLAYER_CARD, FILL_HAND, ADD_PLAYER_CARD, CLEAR_PLAYER_CARDS, GENERATE_RANDOM_BOARD } from './types.js';
 
-export const intitalDeal = (deck) => ({
+export const initialDeal = (deck) => ({
   type: INITIAL_DEAL,
-  payload: deck.slice(0,10)
+  payload: deck
 })
 
 export const removeHandCard = (key) => ({

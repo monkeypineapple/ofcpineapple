@@ -6,6 +6,7 @@ import {
   FILL_HAND,
   ADD_PLAYER_CARD,
 } from "../actions/types";
+import produce from "immer";
 
 const initialCardStatusState = {
   hand: {
@@ -59,13 +60,32 @@ const initialCardStatusState = {
   },
 };
 
-export default function cardStatusReducer(
-  state = initialCardStatusState,
-  action
-) {
+// import produce from "immer"
+
+// const byId = produce((draft, action) => {
+//     switch (action.type) {
+//         case RECEIVE_PRODUCTS:
+//             action.products.forEach(product => {
+//                 draft[product.id] = product
+//             })
+//     }
+// }, {})
+export default produce((state, action) => {
   switch (action.type) {
     case INITIAL_DEAL:
-      return state;
+      console.log(state.playerOne, 'state player one')
+      state.playerOne.bottomRow['1'] = action.payload[0]
+      state.playerOne.bottomRow['2'] = action.payload[1]
+      state.playerOne.bottomRow['3'] = action.payload[2]
+      state.playerOne.bottomRow['4'] = action.payload[3]
+      state.playerOne.bottomRow['5'] = action.payload[4]
+      state.playerTwo.bottomRow['1'] = action.payload[5]
+      state.playerTwo.bottomRow['2'] = action.payload[6]
+      state.playerTwo.bottomRow['3'] = action.payload[7]
+      state.playerTwo.bottomRow['4'] = action.payload[8]
+      state.playerTwo.bottomRow['5'] = action.payload[9]
+    return
+
     case REMOVE_PLAYER_CARD:
       return state;
     case ADD_PLAYER_CARD:
@@ -77,5 +97,5 @@ export default function cardStatusReducer(
     case CLEAR_HAND:
       return state;
   }
-  return state;
-}
+  
+}, initialCardStatusState);
