@@ -14,11 +14,11 @@ const PlayingCard = ({ card }) => {
     );
   } else {
     return (
-      <Card style={{ width: "90px" }}>
+      <Card style={{ width: "100%" }}>
         <img
           alt="empty slot"
-          height="100px"
-          width="90px"
+          height="80px"
+          width="70px"
           src={require("../../assets/EmptySlot.png")}
         ></img>
       </Card>

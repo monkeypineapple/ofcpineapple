@@ -2,17 +2,18 @@ import React from "react";
 import Header from "../Header/Header";
 import GameBoard from "../GameBoard/GameBoard";
 import { Container, Row } from 'react-bootstrap'
+import "./App.css"
 
 const App = () => {
   return (
-    <Container>
+    <>
       <Row>
         <Header></Header>
       </Row>
-      <Row>
+      <Row className="game-board-row">
         <GameBoard></GameBoard>
       </Row>
-    </Container>
+    </>
   );
 };
 
