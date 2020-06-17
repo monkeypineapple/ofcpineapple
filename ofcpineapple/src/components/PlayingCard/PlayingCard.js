@@ -1,12 +1,20 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 
-import "./PlayingCard.css"
+import "./PlayingCard.css";
 
-const PlayingCard = ({ card }) => {
+const PlayingCard = ({ card, isDragging }) => {
+  
+
   if (card) {
     return (
-      <Card >
+      <Card>
+
+
+        
+
+
+        )
         {card.faceUp ? (
           <img className="card-image-styles" alt="" src={card.faceUpImg} />
         ) : (
@@ -16,7 +24,7 @@ const PlayingCard = ({ card }) => {
     );
   } else {
     return (
-      <Card >
+      <Card>
         <img
           alt="empty slot"
           className="card-image-styles"
