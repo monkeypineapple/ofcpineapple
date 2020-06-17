@@ -1,208 +1,321 @@
 import produce from "immer";
 import { REMOVE_CARDS } from "../actions/types";
+import _ from "underscore";
 
-const initialDeckState = [
+const initialDeckState = _.shuffle([
+  {
+    faceUp: true,
+    value: 1,
+    suit: "spades",
+    faceUpImg: require("../assets/spades/1AS.png")
+  },
+  {
+    faceUp: true,
+    value: 2,
+    suit: "spades",
+    faceUpImg: require("../assets/spades/2S.png")
+  },
+  {
+    faceUp: true,
+    value: 3,
+    suit: "spades",
+    faceUpImg: require("../assets/spades/3S.png")
+  },
+  {
+    faceUp: true,
+    value: 4,
+    suit: "spades",
+    faceUpImg: require("../assets/spades/4S.png")
+  },
+  {
+    faceUp: true,
+    value: 5,
+    suit: "spades",
+    faceUpImg: require("../assets/spades/5S.png")
+  },
+  {
+    faceUp: true,
+    value: 6,
+    suit: "spades",
+    faceUpImg: require("../assets/spades/6S.png")
+  },
   {
     faceUp: true,
     value: 7,
+    suit: "spades",
+    faceUpImg: require("../assets/spades/7S.png")
+  },
+  {
+    faceUp: true,
+    value: 8,
+    suit: "spades",
+    faceUpImg: require("../assets/spades/8S.png")
+  },
+  {
+    faceUp: true,
+    value: 9,
+    suit: "spades",
+    faceUpImg: require("../assets/spades/9S.png")
+  },
+  {
+    faceUp: true,
+    value: 10,
+    suit: "spades",
+    faceUpImg: require("../assets/spades/10S.png")
+  },
+  {
+    faceUp: true,
+    value: 11,
+    suit: "spades",
+    faceUpImg: require("../assets/spades/11JS.png")
+  },
+  {
+    faceUp: true,
+    value: 12,
+    suit: "spades",
+    faceUpImg: require("../assets/spades/12QS.png")
+  },
+  {
+    faceUp: true,
+    value: 13,
+    suit: "spades",
+    faceUpImg: require("../assets/spades/KS.png")
+  },
+  {
+    faceUp: true,
+    value: 1,
+    suit: "hearts",
+    faceUpImg: require("../assets/hearts/1AH.png")
+  },
+  {
+    faceUp: true,
+    value: 2,
+    suit: "hearts",
+    faceUpImg: require("../assets/hearts/2H.png")
+  },
+  {
+    faceUp: true,
+    value: 3,
+    suit: "hearts",
+    faceUpImg: require("../assets/hearts/3H.png")
+  },
+  {
+    faceUp: true,
+    value: 4,
+    suit: "hearts",
+    faceUpImg: require("../assets/hearts/4H.png")
+  },
+  {
+    faceUp: true,
+    value: 5,
+    suit: "hearts",
+    faceUpImg: require("../assets/hearts/5H.png")
+  },
+  {
+    faceUp: true,
+    value: 6,
+    suit: "hearts",
+    faceUpImg: require("../assets/hearts/6H.png")
+  },
+  {
+    faceUp: true,
+    value: 7,
+    suit: "hearts",
+    faceUpImg: require("../assets/hearts/7H.png")
+  },
+  {
+    faceUp: true,
+    value: 8,
+    suit: "hearts",
+    faceUpImg: require("../assets/hearts/8H.png")
+  },
+  {
+    faceUp: true,
+    value: 9,
+    suit: "hearts",
+    faceUpImg: require("../assets/hearts/9H.png")
+  },
+  {
+    faceUp: true,
+    value: 10,
+    suit: "hearts",
+    faceUpImg: require("../assets/hearts/10H.png")
+  },
+  {
+    faceUp: true,
+    value: 11,
+    suit: "hearts",
+    faceUpImg: require("../assets/hearts/11JH.png")
+  },
+  {
+    faceUp: true,
+    value: 12,
+    suit: "hearts",
+    faceUpImg: require("../assets/hearts/12QH.png")
+  },
+  {
+    faceUp: true,
+    value: 13,
+    suit: "hearts",
+    faceUpImg: require("../assets/hearts/KH.png")
+  },
+  {
+    faceUp: true,
+    value: 1,
     suit: "clubs",
-    faceUpImg: require("../assets/KS.png"),
-    faceDownImg:
-      require("../assets/EmptySlot.png"),
+    faceUpImg: require("../assets/clubs/1AC.png")
+  },
+  {
+    faceUp: true,
+    value: 2,
+    suit: "clubs",
+    faceUpImg: require("../assets/clubs/2C.png")
+  },
+  {
+    faceUp: true,
+    value: 3,
+    suit: "clubs",
+    faceUpImg: require("../assets/clubs/3C.png")
+  },
+  {
+    faceUp: true,
+    value: 4,
+    suit: "clubs",
+    faceUpImg: require("../assets/clubs/4C.png")
+  },
+  {
+    faceUp: true,
+    value: 5,
+    suit: "clubs",
+    faceUpImg: require("../assets/clubs/5C.png")
+  },
+  {
+    faceUp: true,
+    value: 6,
+    suit: "clubs",
+    faceUpImg: require("../assets/clubs/6C.png")
   },
   {
     faceUp: true,
     value: 7,
     suit: "clubs",
-    faceUpImg: "https://www.totalnonsense.com/KS.png",
-    faceDownImg:
-      "https://cdn2.f-cdn.com/contestentries/88434/10447013/53bec8a13782d_thumb900.jpg",
+    faceUpImg: require("../assets/clubs/7C.png")
+  },
+  {
+    faceUp: true,
+    value: 8,
+    suit: "clubs",
+    faceUpImg: require("../assets/clubs/8C.png")
+  },
+  {
+    faceUp: true,
+    value: 9,
+    suit: "clubs",
+    faceUpImg: require("../assets/clubs/9C.png")
+  },
+  {
+    faceUp: true,
+    value: 10,
+    suit: "clubs",
+    faceUpImg: require("../assets/clubs/10C.png")
+  },
+  {
+    faceUp: true,
+    value: 11,
+    suit: "clubs",
+    faceUpImg: require("../assets/clubs/11JC.png")
+  },
+  {
+    faceUp: true,
+    value: 12,
+    suit: "clubs",
+    faceUpImg: require("../assets/clubs/12QC.png")
+  },
+  {
+    faceUp: true,
+    value: 13,
+    suit: "clubs",
+    faceUpImg: require("../assets/clubs/KC.png")
+  },
+  {
+    faceUp: true,
+    value: 1,
+    suit: "diamonds",
+    faceUpImg: require("../assets/diamonds/1AD.png")
+  },
+  {
+    faceUp: true,
+    value: 2,
+    suit: "diamonds",
+    faceUpImg: require("../assets/diamonds/2D.png")
+  },
+  {
+    faceUp: true,
+    value: 3,
+    suit: "diamonds",
+    faceUpImg: require("../assets/diamonds/3D.png")
+  },
+  {
+    faceUp: true,
+    value: 4,
+    suit: "diamonds",
+    faceUpImg: require("../assets/diamonds/4D.png")
+  },
+  {
+    faceUp: true,
+    value: 5,
+    suit: "diamonds",
+    faceUpImg: require("../assets/diamonds/5D.png")
+  },
+  {
+    faceUp: true,
+    value: 6,
+    suit: "diamonds",
+    faceUpImg: require("../assets/diamonds/6D.png")
   },
   {
     faceUp: true,
     value: 7,
-    suit: "clubs",
-    faceUpImg: "https://www.totalnonsense.com/KS.png",
-    faceDownImg:
-      "https://cdn2.f-cdn.com/contestentries/88434/10447013/53bec8a13782d_thumb900.jpg",
+    suit: "diamonds",
+    faceUpImg: require("../assets/diamonds/7D.png")
   },
   {
     faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: "https://www.totalnonsense.com/KS.png",
-    faceDownImg:
-      "https://cdn2.f-cdn.com/contestentries/88434/10447013/53bec8a13782d_thumb900.jpg",
+    value: 8,
+    suit: "diamonds",
+    faceUpImg: require("../assets/diamonds/8D.png")
   },
   {
     faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: "https://www.totalnonsense.com/KS.png",
-    faceDownImg:
-      "https://cdn2.f-cdn.com/contestentries/88434/10447013/53bec8a13782d_thumb900.jpg",
+    value: 9,
+    suit: "diamonds",
+    faceUpImg: require("../assets/diamonds/9D.png")
   },
   {
     faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: "https://www.totalnonsense.com/KS.png",
-    faceDownImg:
-      "https://cdn2.f-cdn.com/contestentries/88434/10447013/53bec8a13782d_thumb900.jpg",
+    value: 10,
+    suit: "diamonds",
+    faceUpImg: require("../assets/diamonds/10D.png")
   },
   {
     faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: "https://www.totalnonsense.com/KS.png",
-    faceDownImg:
-      "https://cdn2.f-cdn.com/contestentries/88434/10447013/53bec8a13782d_thumb900.jpg",
+    value: 11,
+    suit: "diamonds",
+    faceUpImg: require("../assets/diamonds/11JD.png")
   },
   {
     faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: "https://www.totalnonsense.com/KS.png",
-    faceDownImg:
-      "https://cdn2.f-cdn.com/contestentries/88434/10447013/53bec8a13782d_thumb900.jpg",
+    value: 12,
+    suit: "diamonds",
+    faceUpImg: require("../assets/diamonds/12QD.png")
   },
   {
     faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: "https://www.totalnonsense.com/KS.png",
-    faceDownImg:
-      "https://cdn2.f-cdn.com/contestentries/88434/10447013/53bec8a13782d_thumb900.jpg",
+    value: 13,
+    suit: "diamonds",
+    faceUpImg: require("../assets/diamonds/KD.png")
   },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: "https://www.totalnonsense.com/KS.png",
-    faceDownImg:
-      "https://cdn2.f-cdn.com/contestentries/88434/10447013/53bec8a13782d_thumb900.jpg",
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: "https://www.totalnonsense.com/KS.png",
-    faceDownImg:
-      "https://cdn2.f-cdn.com/contestentries/88434/10447013/53bec8a13782d_thumb900.jpg",
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: "https://www.totalnonsense.com/KS.png",
-    faceDownImg:
-      "https://cdn2.f-cdn.com/contestentries/88434/10447013/53bec8a13782d_thumb900.jpg",
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: "https://www.totalnonsense.com/KS.png",
-    faceDownImg:
-      "https://cdn2.f-cdn.com/contestentries/88434/10447013/53bec8a13782d_thumb900.jpg",
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: "https://www.totalnonsense.com/KS.png",
-    faceDownImg:
-      "https://cdn2.f-cdn.com/contestentries/88434/10447013/53bec8a13782d_thumb900.jpg",
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: "https://www.totalnonsense.com/KS.png",
-    faceDownImg:
-      "https://cdn2.f-cdn.com/contestentries/88434/10447013/53bec8a13782d_thumb900.jpg",
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: "https://www.totalnonsense.com/KS.png",
-    faceDownImg:
-      "https://cdn2.f-cdn.com/contestentries/88434/10447013/53bec8a13782d_thumb900.jpg",
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: "https://www.totalnonsense.com/KS.png",
-    faceDownImg:
-      "https://cdn2.f-cdn.com/contestentries/88434/10447013/53bec8a13782d_thumb900.jpg",
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: "https://www.totalnonsense.com/KS.png",
-    faceDownImg:
-      "https://cdn2.f-cdn.com/contestentries/88434/10447013/53bec8a13782d_thumb900.jpg",
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: "https://www.totalnonsense.com/KS.png",
-    faceDownImg:
-      "https://cdn2.f-cdn.com/contestentries/88434/10447013/53bec8a13782d_thumb900.jpg",
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: "https://www.totalnonsense.com/KS.png",
-    faceDownImg:
-      "https://cdn2.f-cdn.com/contestentries/88434/10447013/53bec8a13782d_thumb900.jpg",
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: "https://www.totalnonsense.com/KS.png",
-    faceDownImg:
-      "https://cdn2.f-cdn.com/contestentries/88434/10447013/53bec8a13782d_thumb900.jpg",
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: "https://www.totalnonsense.com/KS.png",
-    faceDownImg:
-      "https://cdn2.f-cdn.com/contestentries/88434/10447013/53bec8a13782d_thumb900.jpg",
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: "https://www.totalnonsense.com/KS.png",
-    faceDownImg:
-      "https://cdn2.f-cdn.com/contestentries/88434/10447013/53bec8a13782d_thumb900.jpg",
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: "https://www.totalnonsense.com/KS.png",
-    faceDownImg:
-      "https://cdn2.f-cdn.com/contestentries/88434/10447013/53bec8a13782d_thumb900.jpg",
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: "https://www.totalnonsense.com/KS.png",
-    faceDownImg:
-      "https://cdn2.f-cdn.com/contestentries/88434/10447013/53bec8a13782d_thumb900.jpg",
-  },
-];
+]);
 
 export default produce((state, action) => {
   switch (action.type) {

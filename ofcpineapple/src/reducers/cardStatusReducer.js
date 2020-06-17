@@ -4,19 +4,19 @@ import {
   CLEAR_HAND,
   REMOVE_PLAYER_CARD,
   FILL_HAND,
-  ADD_PLAYER_CARD,
+  ADD_PLAYER_CARD
 } from "../actions/types";
 import produce from "immer";
 
 const initialCardStatusState = {
   hand: {
-    handCards: { 1: null, 2: null, 3: null },
+    handCards: { 1: null, 2: null, 3: null }
   },
   playerOne: {
     rowOne: {
       1: null,
       2: null,
-      3: null,
+      3: null
     },
 
     rowTwo: {
@@ -24,7 +24,7 @@ const initialCardStatusState = {
       2: null,
       3: null,
       4: null,
-      5: null,
+      5: null
     },
 
     rowThree: {
@@ -32,14 +32,14 @@ const initialCardStatusState = {
       2: null,
       3: null,
       4: null,
-      5: null,
-    },
+      5: null
+    }
   },
   playerTwo: {
     rowOne: {
       1: null,
       2: null,
-      3: null,
+      3: null
     },
 
     rowTwo: {
@@ -47,7 +47,7 @@ const initialCardStatusState = {
       2: null,
       3: null,
       4: null,
-      5: null,
+      5: null
     },
 
     rowThree: {
@@ -55,9 +55,9 @@ const initialCardStatusState = {
       2: null,
       3: null,
       4: null,
-      5: null,
-    },
-  },
+      5: null
+    }
+  }
 };
 
 // import produce from "immer"
@@ -73,7 +73,6 @@ const initialCardStatusState = {
 export default produce((state, action) => {
   switch (action.type) {
     case INITIAL_DEAL:
-      
       state.playerOne.rowThree["1"] = action.payload[0];
       state.playerOne.rowThree["2"] = action.payload[1];
       state.playerOne.rowThree["3"] = action.payload[2];
@@ -90,13 +89,16 @@ export default produce((state, action) => {
       return state;
     case ADD_PLAYER_CARD:
       return state;
-    case FILL_HAND:
-      return state;
+    case FILL_HAND: // [{}, {}]
+      state.hand["1"] = action.payload[0];
+      state.hand["2"] = action.payload[1];
+      state.hand["3"] = action.payload[2];
+      return;
     case REMOVE_HAND_CARD:
       return state;
     case CLEAR_HAND:
       return state;
-      default:
-        return state
+    default:
+      return state;
   }
 }, initialCardStatusState);

@@ -26,9 +26,9 @@ export const addPlayerCard = (info) => ({
   payload: info
 })
 
-export const fillHand = (deck) => ({
+export const fillHand = (hand) => ({
   type: FILL_HAND,
-  payload: deck.slice(0,3)
+  payload: hand
 
 })
 
