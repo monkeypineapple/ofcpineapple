@@ -73,7 +73,7 @@ const initialCardStatusState = {
 export default produce((state, action) => {
   switch (action.type) {
     case INITIAL_DEAL:
-      console.log(state.playerOne, "state player one");
+      
       state.playerOne.rowThree["1"] = action.payload[0];
       state.playerOne.rowThree["2"] = action.payload[1];
       state.playerOne.rowThree["3"] = action.payload[2];
@@ -96,5 +96,7 @@ export default produce((state, action) => {
       return state;
     case CLEAR_HAND:
       return state;
+      default:
+        return state
   }
 }, initialCardStatusState);

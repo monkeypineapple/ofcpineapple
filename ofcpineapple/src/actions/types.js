@@ -1,5 +1,6 @@
 //deck reducers
 export const SHUFFLE_DECK = 'SHUFFLE_DECK'
+export const REMOVE_CARDS = "REMOVE_CARDS"
 
 //cardStatus reducers
 export const INITIAL_DEAL = "INITIAL_DEAL"
