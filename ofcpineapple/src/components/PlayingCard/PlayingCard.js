@@ -7,30 +7,22 @@ const PlayingCard = ({ card }) => {
     return (
       <Card>
         {card.faceUp ? (
-          <img
-            alt=""
-            className="card-img-styles"
-            height="80px"
-            width="70px"
-            src={require("../../EmptySlot.png")}
-          />
+          <img alt="" className="card-image-styles" src={card.faceUpImg} />
         ) : (
           <img
             alt=""
-            height="80px"
-            width="70px"
-            src={require("../../EmptySlot.png")}
+            className="card-image-styles"
+            src={require(card.faceDownImg)}
           />
         )}
       </Card>
     );
   } else {
     return (
-      <Card style={{ width: "100%" }}>
+      <Card>
         <img
           alt="empty slot"
-          height="80px"
-          width="70px"
+          className="card-image-styles"
           src={require("../../assets/EmptySlot.png")}
         ></img>
       </Card>

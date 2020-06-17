@@ -6,169 +6,190 @@ const initialDeckState = [
     faceUp: true,
     value: 7,
     suit: "clubs",
-    faceUpImg: "../assets/KS.png",
-    faceDownImg: "../assets/EmptySlot.png"
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
   },
   {
     faceUp: true,
     value: 7,
     suit: "clubs",
-    faceUpImg: "../assets/KS.png",
-    faceDownImg: "../assets/EmptySlot.png"
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
   },
   {
     faceUp: true,
     value: 7,
     suit: "clubs",
-    faceUpImg: "../assets/KS.png",
-    faceDownImg: "../assets/EmptySlot.png"
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
   },
   {
     faceUp: true,
     value: 7,
     suit: "clubs",
-    faceUpImg: "../assets/KS.png",
-    faceDownImg: "../assets/EmptySlot.png"
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
   },
   {
     faceUp: true,
     value: 7,
     suit: "clubs",
-    faceUpImg: "../assets/KS.png",
-    faceDownImg: "../assets/EmptySlot.png"
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
   },
   {
     faceUp: true,
     value: 7,
     suit: "clubs",
-    faceUpImg: "../assets/KS.png",
-    faceDownImg: "../assets/EmptySlot.png"
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
   },
   {
     faceUp: true,
     value: 7,
     suit: "clubs",
-    faceUpImg: "../assets/KS.png",
-    faceDownImg: "../assets/EmptySlot.png"
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
   },
   {
     faceUp: true,
     value: 7,
     suit: "clubs",
-    faceUpImg: "../assets/KS.png",
-    faceDownImg: "../assets/EmptySlot.png"
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
   },
   {
     faceUp: true,
     value: 7,
     suit: "clubs",
-    faceUpImg: "../assets/KS.png",
-    faceDownImg: "../assets/EmptySlot.png"
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
   },
   {
     faceUp: true,
     value: 7,
     suit: "clubs",
-    faceUpImg: "../assets/KS.png",
-    faceDownImg: "../assets/EmptySlot.png"
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
   },
   {
     faceUp: true,
     value: 7,
     suit: "clubs",
-    faceUpImg: "../assets/KS.png",
-    faceDownImg: "../assets/EmptySlot.png"
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
   },
   {
     faceUp: true,
     value: 7,
     suit: "clubs",
-    faceUpImg: "../assets/KS.png",
-    faceDownImg: "../assets/EmptySlot.png"
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
   },
   {
     faceUp: true,
     value: 7,
     suit: "clubs",
-    faceUpImg: "../assets/KS.png",
-    faceDownImg: "../assets/EmptySlot.png"
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
   },
   {
     faceUp: true,
     value: 7,
     suit: "clubs",
-    faceUpImg: "../assets/KS.png",
-    faceDownImg: "../assets/EmptySlot.png"
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
   },
   {
     faceUp: true,
     value: 7,
     suit: "clubs",
-    faceUpImg: "../assets/KS.png",
-    faceDownImg: "../assets/EmptySlot.png"
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
   },
   {
     faceUp: true,
     value: 7,
     suit: "clubs",
-    faceUpImg: "../assets/KS.png",
-    faceDownImg: "../assets/EmptySlot.png"
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
   },
   {
     faceUp: true,
     value: 7,
     suit: "clubs",
-    faceUpImg: "../assets/KS.png",
-    faceDownImg: "../assets/EmptySlot.png"
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
   },
   {
     faceUp: true,
     value: 7,
     suit: "clubs",
-    faceUpImg: "../assets/KS.png",
-    faceDownImg: "../assets/EmptySlot.png"
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
   },
   {
     faceUp: true,
     value: 7,
     suit: "clubs",
-    faceUpImg: "../assets/KS.png",
-    faceDownImg: "../assets/EmptySlot.png"
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
   },
   {
     faceUp: true,
     value: 7,
     suit: "clubs",
-    faceUpImg: "../assets/KS.png",
-    faceDownImg: "../assets/EmptySlot.png"
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
   },
   {
     faceUp: true,
     value: 7,
     suit: "clubs",
-    faceUpImg: "../assets/KS.png",
-    faceDownImg: "../assets/EmptySlot.png"
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
   },
   {
     faceUp: true,
     value: 7,
     suit: "clubs",
-    faceUpImg: "../assets/KS.png",
-    faceDownImg: "../assets/EmptySlot.png"
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
   },
   {
     faceUp: true,
     value: 7,
     suit: "clubs",
-    faceUpImg: "../assets/KS.png",
-    faceDownImg: "../assets/EmptySlot.png"
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
   },
   {
     faceUp: true,
     value: 7,
     suit: "clubs",
-    faceUpImg: "../assets/KS.png",
-    faceDownImg: "../assets/EmptySlot.png"
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
+  },
+  {
+    faceUp: true,
+    value: 7,
+    suit: "clubs",
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
+  },
+  {
+    faceUp: true,
+    value: 7,
+    suit: "clubs",
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
+  },
+  {
+    faceUp: true,
+    value: 7,
+    suit: "clubs",
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
   }
 ];
 

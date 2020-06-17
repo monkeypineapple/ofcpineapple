@@ -11,8 +11,8 @@ import PlayerTwoRowThree from "../PlayerTwoRowThree/PlayerTwoRowThree.js";
 import PlayerTwoRowTwo from "../PlayerTwoRowTwo/PlayerTwoRowTwo.js";
 import PlayerTwoRowOne from "../PlayerTwoRowOne/PlayerTwoRowOne.js";
 import { Row, Col } from "react-bootstrap";
-import "./GameBoard.css"
-
+import "./GameBoard.css";
+import Hand from "../Hand/Hand";
 
 const GameBoard = ({ deck, initialDeal, removeCards, board }) => {
   const handleInitialDealButtonClick = () => {
@@ -23,14 +23,16 @@ const GameBoard = ({ deck, initialDeal, removeCards, board }) => {
   return (
     <Container fluid>
       <Button onClick={handleInitialDealButtonClick}>DEAL!</Button>
-      <Row  className="row-one">
-        <Col  className="p1-r1-col">
+      <Row className="row-one">
+        <Col className="p1-r1-col">
           <Row className="p1-r1">
             <PlayerOneRowOne cards={board.playerOne.rowOne} />
           </Row>
         </Col>
-        <Col></Col>
-        <Col className="p2-r1-col"  >
+        <Col>
+          <Hand cards={board.hand} />
+        </Col>
+        <Col className="p2-r1-col">
           <Row className="p2-r1">
             <PlayerTwoRowOne cards={board.playerTwo.rowOne} />
           </Row>
@@ -66,17 +68,17 @@ const GameBoard = ({ deck, initialDeal, removeCards, board }) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     deck: state.deck,
-    board: state.cardStatus,
+    board: state.cardStatus
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    initialDeal: (deck) => dispatch(initialDeal(deck)),
-    removeCards: (n) => dispatch(removeCards(n)),
+    initialDeal: deck => dispatch(initialDeal(deck)),
+    removeCards: n => dispatch(removeCards(n))
   };
 };
 
