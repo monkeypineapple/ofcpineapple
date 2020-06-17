@@ -73,7 +73,6 @@ const initialCardStatusState = {
 export default produce((state, action) => {
   switch (action.type) {
     case INITIAL_DEAL:
-      
       state.playerOne.rowThree["1"] = action.payload[0];
       state.playerOne.rowThree["2"] = action.payload[1];
       state.playerOne.rowThree["3"] = action.payload[2];
@@ -90,13 +89,16 @@ export default produce((state, action) => {
       return state;
     case ADD_PLAYER_CARD:
       return state;
-    case FILL_HAND:
-      return state;
+    case FILL_HAND: // [{}, {}]
+      state.hand["1"] = action.payload[0];
+      state.hand["2"] = action.payload[1];
+      state.hand["3"] = action.payload[2];
+
     case REMOVE_HAND_CARD:
       return state;
     case CLEAR_HAND:
       return state;
-      default:
-        return state
+    default:
+      return state;
   }
 }, initialCardStatusState);

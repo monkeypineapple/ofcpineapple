@@ -6,6 +6,7 @@ import PlayingCard from "../PlayingCard/PlayingCard";
 function Hand({ cards }) {
   return (
     <Row>
+      <Col></Col>
       <Col>
         <PlayingCard card={cards["1"]} />
       </Col>
@@ -15,6 +16,7 @@ function Hand({ cards }) {
       <Col>
         <PlayingCard card={cards["3"]} />
       </Col>
+      <Col></Col>
     </Row>
   );
 }
