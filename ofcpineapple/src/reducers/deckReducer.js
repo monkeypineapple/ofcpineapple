@@ -67,19 +67,19 @@ const initialDeckState = _.shuffle([
     faceUp: true,
     value: 11,
     suit: "spades",
-    faceUpImg: require("../assets/spades/11S.png")
+    faceUpImg: require("../assets/spades/11JS.png")
   },
   {
     faceUp: true,
     value: 12,
     suit: "spades",
-    faceUpImg: require("../assets/spades/12S.png")
+    faceUpImg: require("../assets/spades/12QS.png")
   },
   {
     faceUp: true,
     value: 13,
     suit: "spades",
-    faceUpImg: require("../assets/spades/13S.png")
+    faceUpImg: require("../assets/spades/KS.png")
   },
   {
     faceUp: true,
@@ -145,19 +145,19 @@ const initialDeckState = _.shuffle([
     faceUp: true,
     value: 11,
     suit: "hearts",
-    faceUpImg: require("../assets/hearts/11H.png")
+    faceUpImg: require("../assets/hearts/11JH.png")
   },
   {
     faceUp: true,
     value: 12,
     suit: "hearts",
-    faceUpImg: require("../assets/hearts/12H.png")
+    faceUpImg: require("../assets/hearts/12QH.png")
   },
   {
     faceUp: true,
     value: 13,
     suit: "hearts",
-    faceUpImg: require("../assets/hearts/13H.png")
+    faceUpImg: require("../assets/hearts/KH.png")
   },
   {
     faceUp: true,
@@ -223,19 +223,19 @@ const initialDeckState = _.shuffle([
     faceUp: true,
     value: 11,
     suit: "clubs",
-    faceUpImg: require("../assets/clubs/11C.png")
+    faceUpImg: require("../assets/clubs/11JC.png")
   },
   {
     faceUp: true,
     value: 12,
     suit: "clubs",
-    faceUpImg: require("../assets/clubs/12C.png")
+    faceUpImg: require("../assets/clubs/12QC.png")
   },
   {
     faceUp: true,
     value: 13,
     suit: "clubs",
-    faceUpImg: require("../assets/clubs/13C.png")
+    faceUpImg: require("../assets/clubs/KC.png")
   },
   {
     faceUp: true,
@@ -301,19 +301,19 @@ const initialDeckState = _.shuffle([
     faceUp: true,
     value: 11,
     suit: "diamonds",
-    faceUpImg: require("../assets/diamonds/11D.png")
+    faceUpImg: require("../assets/diamonds/11JD.png")
   },
   {
     faceUp: true,
     value: 12,
     suit: "diamonds",
-    faceUpImg: require("../assets/diamonds/12D.png")
+    faceUpImg: require("../assets/diamonds/12QD.png")
   },
   {
     faceUp: true,
     value: 13,
     suit: "diamonds",
-    faceUpImg: require("../assets/diamonds/13D.png")
+    faceUpImg: require("../assets/diamonds/KD.png")
   },
 ]);
 
