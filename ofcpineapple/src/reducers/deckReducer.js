@@ -1,9 +1,73 @@
 import produce from "immer";
 import { REMOVE_CARDS } from "../actions/types";
+import _ from 'underscore'
 
-const initialDeckState = [
+const initialDeckState = _.shuffle([
   {
     faceUp: true,
+    value: 7,
+    suit: "clubs",
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
+  },
+  {
+    faceUp: false,
+    value: 7,
+    suit: "clubs",
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
+  },
+  {
+    faceUp: false,
+    value: 7,
+    suit: "clubs",
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
+  },
+  {
+    faceUp: false,
+    value: 7,
+    suit: "clubs",
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
+  },
+  {
+    faceUp: true,
+    value: 7,
+    suit: "clubs",
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
+  },
+  {
+    faceUp: true,
+    value: 7,
+    suit: "clubs",
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
+  },
+  {
+    faceUp: false,
+    value: 7,
+    suit: "clubs",
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
+  },
+  {
+    faceUp: true,
+    value: 7,
+    suit: "clubs",
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
+  },
+  {
+    faceUp: true,
+    value: 7,
+    suit: "clubs",
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
+  },
+  {
+    faceUp: false,
     value: 7,
     suit: "clubs",
     faceUpImg: require("../assets/KS.png"),
@@ -38,7 +102,42 @@ const initialDeckState = [
     faceDownImg: require("../assets/EmptySlot.png")
   },
   {
+    faceUp: false,
+    value: 7,
+    suit: "clubs",
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
+  },
+  {
+    faceUp: false,
+    value: 7,
+    suit: "clubs",
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
+  },
+  {
     faceUp: true,
+    value: 7,
+    suit: "clubs",
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
+  },
+  {
+    faceUp: true,
+    value: 7,
+    suit: "clubs",
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
+  },
+  {
+    faceUp: false,
+    value: 7,
+    suit: "clubs",
+    faceUpImg: require("../assets/KS.png"),
+    faceDownImg: require("../assets/EmptySlot.png")
+  },
+  {
+    faceUp: false,
     value: 7,
     suit: "clubs",
     faceUpImg: require("../assets/KS.png"),
@@ -66,7 +165,7 @@ const initialDeckState = [
     faceDownImg: require("../assets/EmptySlot.png")
   },
   {
-    faceUp: true,
+    faceUp: false,
     value: 7,
     suit: "clubs",
     faceUpImg: require("../assets/KS.png"),
@@ -87,111 +186,13 @@ const initialDeckState = [
     faceDownImg: require("../assets/EmptySlot.png")
   },
   {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: require("../assets/KS.png"),
-    faceDownImg: require("../assets/EmptySlot.png")
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: require("../assets/KS.png"),
-    faceDownImg: require("../assets/EmptySlot.png")
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: require("../assets/KS.png"),
-    faceDownImg: require("../assets/EmptySlot.png")
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: require("../assets/KS.png"),
-    faceDownImg: require("../assets/EmptySlot.png")
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: require("../assets/KS.png"),
-    faceDownImg: require("../assets/EmptySlot.png")
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: require("../assets/KS.png"),
-    faceDownImg: require("../assets/EmptySlot.png")
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: require("../assets/KS.png"),
-    faceDownImg: require("../assets/EmptySlot.png")
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: require("../assets/KS.png"),
-    faceDownImg: require("../assets/EmptySlot.png")
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: require("../assets/KS.png"),
-    faceDownImg: require("../assets/EmptySlot.png")
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: require("../assets/KS.png"),
-    faceDownImg: require("../assets/EmptySlot.png")
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: require("../assets/KS.png"),
-    faceDownImg: require("../assets/EmptySlot.png")
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: require("../assets/KS.png"),
-    faceDownImg: require("../assets/EmptySlot.png")
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: require("../assets/KS.png"),
-    faceDownImg: require("../assets/EmptySlot.png")
-  },
-  {
-    faceUp: true,
-    value: 7,
-    suit: "clubs",
-    faceUpImg: require("../assets/KS.png"),
-    faceDownImg: require("../assets/EmptySlot.png")
-  },
-  {
-    faceUp: true,
+    faceUp: false,
     value: 7,
     suit: "clubs",
     faceUpImg: require("../assets/KS.png"),
     faceDownImg: require("../assets/EmptySlot.png")
   }
-];
+]);
 
 export default produce((state, action) => {
   switch (action.type) {
