@@ -1,4 +1,7 @@
 .card-image-styles {
   height: 80px;
   width: 70px;
+  background: transparent;
+  border-width: 2px;
+  border-color: grey;
 }
