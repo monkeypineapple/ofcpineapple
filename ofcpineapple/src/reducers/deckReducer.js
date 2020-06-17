@@ -6,9 +6,9 @@ const initialDeckState = [
     faceUp: true,
     value: 7,
     suit: "clubs",
-    faceUpImg: "https://www.totalnonsense.com/KS.png",
+    faceUpImg: require("../assets/KS.png"),
     faceDownImg:
-      "https://cdn2.f-cdn.com/contestentries/88434/10447013/53bec8a13782d_thumb900.jpg",
+      require("../assets/EmptySlot.png"),
   },
   {
     faceUp: true,

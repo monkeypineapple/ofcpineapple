@@ -1,24 +1,24 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import "./PlayingCard.css"
 
 const PlayingCard = ({ card }) => {
   if (card) {
     return (
-      <Card style={{ width: "10rem" }}>
+      <Card >
         {card.faceUp ? (
-          <img alt="" src={card.faceUpImg} />
+          <img className="card-image-styles" alt="" src={card.faceUpImg} />
         ) : (
-          <img alt="" src={card.faceDown} />
+          <img className="card-image-styles" alt="" src={card.faceDown} />
         )}
       </Card>
     );
   } else {
     return (
-      <Card style={{ width: "100%" }}>
+      <Card >
         <img
           alt="empty slot"
-          height="80px"
-          width="70px"
+          className="card-image-styles"
           src={require("../../assets/EmptySlot.png")}
         ></img>
       </Card>
