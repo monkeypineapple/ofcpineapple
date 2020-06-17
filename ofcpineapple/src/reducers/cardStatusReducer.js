@@ -93,7 +93,7 @@ export default produce((state, action) => {
       state.hand["1"] = action.payload[0];
       state.hand["2"] = action.payload[1];
       state.hand["3"] = action.payload[2];
-
+      return;
     case REMOVE_HAND_CARD:
       return state;
     case CLEAR_HAND:

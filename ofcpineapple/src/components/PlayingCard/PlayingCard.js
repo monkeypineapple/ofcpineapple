@@ -16,11 +16,7 @@ const PlayingCard = ({ card, className }) => {
         {card.faceUp ? (
           <img alt="" className="card-image-styles" src={card.faceUpImg} />
         ) : (
-          <img
-            alt=""
-            className={"card-image-styles"}
-            src={require(card.faceDownImg)}
-          />
+          <img alt="" className={"card-image-styles"} src={card.faceDownImg} />
         )}
       </Card>
     );

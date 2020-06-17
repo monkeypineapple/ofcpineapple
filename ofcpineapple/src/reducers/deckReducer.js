@@ -1,6 +1,6 @@
 import produce from "immer";
 import { REMOVE_CARDS } from "../actions/types";
-import _ from 'underscore'
+import _ from "underscore";
 
 const initialDeckState = _.shuffle([
   {
