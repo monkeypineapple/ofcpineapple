@@ -372,8 +372,8 @@ const initialDeckState = _.shuffle([
 export default produce((state, action) => {
   switch (action.type) {
     case REMOVE_CARDS:
-      state.splice(state.length - 1 - action.payload, action.payload);
-      return;
+      state.splice(0, action.payload);
+      return 
     default:
       return;
   }
