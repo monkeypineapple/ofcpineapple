@@ -1,12 +1,18 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import "./PlayingCard.css";
+import { getLocationInfo } from "../../utilities/utils";
+import { connect } from "react-redux";
 
-const PlayingCard = ({ card, className }) => {
+const PlayingCard = ({ card, className, data }) => {
+  const handleLocationClick = () => {
+    console.log(getLocationInfo(card.id, data), 'getLocationInfo called');
+  };
   if (card) {
     return (
       <Card
         // we tried to make border; ternary not being used; but this allows custom style class name to be passed in
+        onClick={handleLocationClick}
         className={
           !className
             ? "card-image-styles"
@@ -23,6 +29,7 @@ const PlayingCard = ({ card, className }) => {
   } else {
     return (
       <Card
+        onClick={handleLocationClick}
         className={
           !className
             ? "card-image-styles"
@@ -39,4 +46,10 @@ const PlayingCard = ({ card, className }) => {
   }
 };
 
-export default PlayingCard;
+const mapStateToProps = (state) => {
+  return {
+    data: state.cardStatus
+  }
+}
+
+export default connect(mapStateToProps, null)(PlayingCard);

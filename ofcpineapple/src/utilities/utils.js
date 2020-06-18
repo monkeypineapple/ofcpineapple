@@ -36,7 +36,7 @@ const findRowCol = (obj, id) => {
 const determinePlayer = (id, data, isFirstPlayer) => {
   let obj = isFirstPlayer ? data.playerOne : data.playerTwo;
   for (let key in obj) {
-    if (Object.values(obj[key]).some((val) => val.id === id)) {
+    if (Object.values(obj[key]).some((val) => val && val.id === id)) {
       return {
         row: findRow(key),
         col: findRowCol(key, id),
@@ -54,20 +54,12 @@ const isDiscard = (id, data) => {
   );
 };
 
-const isPlayerTwo = (id, data) => {
-  let obj = data.playerTwo;
-
-  for (let key in obj) {
-    if (Object.values(obj[key]).some((val) => val.id === id)) {
-      return true;
-    }
-  }
-  return false;
-};
-
 const getRowCol = (id, data, locationObj) => {
   let col;
   let row;
+  let playerOne = determinePlayer(id, data, true);
+  let playerTwo = determinePlayer(id, data, false);
+
   if (locationObj.isHand) {
     for (let key in data.hand.handCards) {
       if (data.hand.handCards[key] && data.hand.handCards[key].id === id) {
@@ -77,55 +69,22 @@ const getRowCol = (id, data, locationObj) => {
     }
     locationObj.row = row;
     locationObj.col = col;
-  }
-  if (locationObj.isPlayerOne) {
-    for (let key in data.playerOne.handCards) {
-      if (data.hand.handCards[key] && data.hand.handCards[key].id === id) {
-        row = 1;
-        col = key;
-      }
-    }
-    locationObj.row = row;
-    locationObj.col = col;
+  } else if (playerOne) {
+    locationObj["row"] = playerOne.row;
+    locationObj["col"] = playerOne.col;
+  } else if (playerTwo) {
+    locationObj["row"] = playerTwo.row;
+    locationObj["col"] = playerTwo.col;
   }
 };
-
 export const getLocationInfo = (id, data) => {
   const location = {
-    isHand: false,
-    isPlayerOne: false,
-    isDiscard: false,
+    isHand: isHandCard(id, data),
+    isPlayerOne: !!determinePlayer(id, data, true),
+    isDiscard: isDiscard(id, data),
     row: 1,
     col: 1,
   };
-
-  data = {};
-
-  // hand: {
-  //   handCards: { 1: null, 2: null, 3: null },
-  // },
-  // playerOne: {
-  //   rowOne: {
-  //     1: null,
-  //     2: null,
-  //     3: null,
-  //   },
-
-  //   rowTwo: {
-  //     1: null,
-  //     2: null,
-  //     3: null,
-  //     4: null,
-  //     5: null,
-  //   },
-
-  //   rowThree: {
-  //     1: null,
-  //     2: null,
-  //     3: null,
-  //     4: null,
-  //     5: null,
-  //   },
+  getRowCol(id, data, location);
+  return location;
 };
-
-//
