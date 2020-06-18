@@ -4,7 +4,7 @@ import { Col } from "react-bootstrap";
 import "../App/App.css";
 
 const PlayerTwoRowOne = (props) => {
-  console.log(props.cards);
+ 
   return (
     <>
       <Col className="col-margins"></Col>

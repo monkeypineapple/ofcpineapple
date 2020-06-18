@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 
 const PlayingCard = ({ card, className, data }) => {
   const handleLocationClick = () => {
-    console.log(getLocationInfo(card.id, data), 'getLocationInfo called');
+  
   };
   if (card) {
     return (

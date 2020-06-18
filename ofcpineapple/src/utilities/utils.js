@@ -12,7 +12,6 @@ const isHandCard = (id, data) => {
     if (obj[key] && obj[key].id === id) {
       return true;
     }
-    console.log( obj, "hand check")
   }
   return false;
 };
@@ -29,7 +28,9 @@ const findRow = (key) => {
 
 const findRowCol = (obj, id) => {
   for (let key in obj) {
+    
     if (obj[key].id === id) {
+  
       return parseInt(key);
     }
   }
@@ -40,7 +41,7 @@ const determinePlayer = (id, data, isFirstPlayer) => {
     if (Object.values(obj[key]).some((val) => val && val.id === id)) {
       return {
         row: findRow(key),
-        col: findRowCol(key, id),
+        col: findRowCol(obj[key], id),
       };
     }
   }
@@ -59,6 +60,7 @@ const getRowCol = (id, data, locationObj) => {
   let col;
   let row;
   let playerOne = determinePlayer(id, data, true);
+  
   let playerTwo = determinePlayer(id, data, false);
 
   if (locationObj.isHand) {
@@ -78,6 +80,7 @@ const getRowCol = (id, data, locationObj) => {
     locationObj["col"] = playerTwo.col;
   }
 };
+
 export const getLocationInfo = (id, data) => {
   const location = {
     isHand: isHandCard(id, data),

@@ -5,7 +5,7 @@ import "../App/App.css"
 
 
 const PlayerOneRowTwo = (props) => {
-  console.log(props.cards)
+ 
   return (
     <>
       <Col className="col-margins"><PlayingCard card={props.cards["1"]} /></Col>
