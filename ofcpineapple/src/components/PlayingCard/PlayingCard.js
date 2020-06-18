@@ -3,10 +3,18 @@ import { Card } from "react-bootstrap";
 import "./PlayingCard.css";
 import { getLocationInfo } from "../../utilities/utils";
 import { connect } from "react-redux";
+import { setSelectedCard } from "../../actions/cardStatus";
 
-const PlayingCard = ({ card, className, data }) => {
+const PlayingCard = ({ card, className, data, setSelectedCard }) => {
   const handleLocationClick = () => {
-  
+    let cardLocation = getLocationInfo(card.id, data);
+    setSelectedCard({ card: card });
+  };
+
+  const highlightSelectedCard = () => {
+    return data.selectedCard.card && data.selectedCard.card.id === card.id
+      ? "selected-card-style"
+      : "";
   };
   if (card) {
     return (
@@ -19,11 +27,7 @@ const PlayingCard = ({ card, className, data }) => {
             : "card-image-styles" + " " + className
         }
       >
-        {card.faceUp ? (
-          <img alt="" className="card-image-styles" src={card.faceUpImg} />
-        ) : (
-          <img alt="" className={"card-image-styles"} src={card.faceDownImg} />
-        )}
+        <img alt="" className={"card-image-styles" + ' ' + highlightSelectedCard()} src={card.faceUpImg} />
       </Card>
     );
   } else {
@@ -48,8 +52,14 @@ const PlayingCard = ({ card, className, data }) => {
 
 const mapStateToProps = (state) => {
   return {
-    data: state.cardStatus
-  }
-}
+    data: state.cardStatus,
+  };
+};
 
-export default connect(mapStateToProps, null)(PlayingCard);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setSelectedCard: (cardInfo) => dispatch(setSelectedCard(cardInfo)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PlayingCard);
