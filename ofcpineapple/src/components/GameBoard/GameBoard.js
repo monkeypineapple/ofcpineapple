@@ -35,7 +35,7 @@ const GameBoard = ({ deck, initialDeal, fillHand, removeCards, board }) => {
           </Row>
         </Col>
         <Col>
-          <Hand cards={board.hand} />
+          <Hand cards={board.hand.handCards} />
         </Col>
         <Col className="p2-r1-col">
           <Row className="p2-r1">

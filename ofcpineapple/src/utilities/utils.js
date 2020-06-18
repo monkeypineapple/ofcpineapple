@@ -1,4 +1,4 @@
-import React from "react";
+
 
 export const determineColumnContent = (slot) => {
   if (slot.isBackgroundSpace) {
@@ -12,6 +12,7 @@ const isHandCard = (id, data) => {
     if (obj[key] && obj[key].id === id) {
       return true;
     }
+    console.log( obj, "hand check")
   }
   return false;
 };
