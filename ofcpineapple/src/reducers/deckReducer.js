@@ -5,322 +5,374 @@ import _ from "underscore";
 const initialDeckState = _.shuffle([
   {
     faceUp: true,
+    id: 1,
     value: 1,
     suit: "spades",
-    faceUpImg: require("../assets/spades/1AS.png")
+    faceUpImg: require("../assets/spades/1AS.png"),
   },
   {
     faceUp: true,
+    id: 2,
     value: 2,
     suit: "spades",
-    faceUpImg: require("../assets/spades/2S.png")
+    faceUpImg: require("../assets/spades/2S.png"),
   },
   {
     faceUp: true,
+    id: 3,
     value: 3,
     suit: "spades",
-    faceUpImg: require("../assets/spades/3S.png")
+    faceUpImg: require("../assets/spades/3S.png"),
   },
   {
     faceUp: true,
+    id: 4,
     value: 4,
     suit: "spades",
-    faceUpImg: require("../assets/spades/4S.png")
+    faceUpImg: require("../assets/spades/4S.png"),
   },
   {
     faceUp: true,
+    id: 5,
     value: 5,
     suit: "spades",
-    faceUpImg: require("../assets/spades/5S.png")
+    faceUpImg: require("../assets/spades/5S.png"),
   },
   {
     faceUp: true,
+    id: 6,
     value: 6,
     suit: "spades",
-    faceUpImg: require("../assets/spades/6S.png")
+    faceUpImg: require("../assets/spades/6S.png"),
   },
   {
     faceUp: true,
+    id: 7,
     value: 7,
     suit: "spades",
-    faceUpImg: require("../assets/spades/7S.png")
+    faceUpImg: require("../assets/spades/7S.png"),
   },
   {
     faceUp: true,
+    id: 8,
     value: 8,
     suit: "spades",
-    faceUpImg: require("../assets/spades/8S.png")
+    faceUpImg: require("../assets/spades/8S.png"),
   },
   {
     faceUp: true,
+    id: 9,
     value: 9,
     suit: "spades",
-    faceUpImg: require("../assets/spades/9S.png")
+    faceUpImg: require("../assets/spades/9S.png"),
   },
   {
     faceUp: true,
+    id: 10,
     value: 10,
     suit: "spades",
-    faceUpImg: require("../assets/spades/10S.png")
+    faceUpImg: require("../assets/spades/10S.png"),
   },
   {
     faceUp: true,
+    id: 11,
     value: 11,
     suit: "spades",
-    faceUpImg: require("../assets/spades/11JS.png")
+    faceUpImg: require("../assets/spades/11JS.png"),
   },
   {
     faceUp: true,
+    id: 12,
     value: 12,
     suit: "spades",
-    faceUpImg: require("../assets/spades/12QS.png")
+    faceUpImg: require("../assets/spades/12QS.png"),
   },
   {
     faceUp: true,
+    id: 13,
     value: 13,
     suit: "spades",
-    faceUpImg: require("../assets/spades/KS.png")
+    faceUpImg: require("../assets/spades/KS.png"),
   },
   {
     faceUp: true,
+    id: 14,
     value: 1,
     suit: "hearts",
-    faceUpImg: require("../assets/hearts/1AH.png")
+    faceUpImg: require("../assets/hearts/1AH.png"),
   },
   {
     faceUp: true,
+    id: 15,
     value: 2,
     suit: "hearts",
-    faceUpImg: require("../assets/hearts/2H.png")
+    faceUpImg: require("../assets/hearts/2H.png"),
   },
   {
     faceUp: true,
+    id: 16,
     value: 3,
     suit: "hearts",
-    faceUpImg: require("../assets/hearts/3H.png")
+    faceUpImg: require("../assets/hearts/3H.png"),
   },
   {
     faceUp: true,
+    id: 17,
     value: 4,
     suit: "hearts",
-    faceUpImg: require("../assets/hearts/4H.png")
+    faceUpImg: require("../assets/hearts/4H.png"),
   },
   {
     faceUp: true,
+    id: 18,
     value: 5,
     suit: "hearts",
-    faceUpImg: require("../assets/hearts/5H.png")
+    faceUpImg: require("../assets/hearts/5H.png"),
   },
   {
     faceUp: true,
+    id: 19,
     value: 6,
     suit: "hearts",
-    faceUpImg: require("../assets/hearts/6H.png")
+    faceUpImg: require("../assets/hearts/6H.png"),
   },
   {
     faceUp: true,
+    id: 20,
     value: 7,
     suit: "hearts",
-    faceUpImg: require("../assets/hearts/7H.png")
+    faceUpImg: require("../assets/hearts/7H.png"),
   },
   {
     faceUp: true,
+    id: 21,
     value: 8,
     suit: "hearts",
-    faceUpImg: require("../assets/hearts/8H.png")
+    faceUpImg: require("../assets/hearts/8H.png"),
   },
   {
     faceUp: true,
+    id: 22,
     value: 9,
     suit: "hearts",
-    faceUpImg: require("../assets/hearts/9H.png")
+    faceUpImg: require("../assets/hearts/9H.png"),
   },
   {
     faceUp: true,
+    id: 23,
     value: 10,
     suit: "hearts",
-    faceUpImg: require("../assets/hearts/10H.png")
+    faceUpImg: require("../assets/hearts/10H.png"),
   },
   {
     faceUp: true,
+    id: 24,
     value: 11,
     suit: "hearts",
-    faceUpImg: require("../assets/hearts/11JH.png")
+    faceUpImg: require("../assets/hearts/11JH.png"),
   },
   {
     faceUp: true,
+    id: 25,
     value: 12,
     suit: "hearts",
-    faceUpImg: require("../assets/hearts/12QH.png")
+    faceUpImg: require("../assets/hearts/12QH.png"),
   },
   {
     faceUp: true,
+    id: 26,
     value: 13,
     suit: "hearts",
-    faceUpImg: require("../assets/hearts/KH.png")
+    faceUpImg: require("../assets/hearts/KH.png"),
   },
   {
     faceUp: true,
+    id: 27,
     value: 1,
     suit: "clubs",
-    faceUpImg: require("../assets/clubs/1AC.png")
+    faceUpImg: require("../assets/clubs/1AC.png"),
   },
   {
     faceUp: true,
+    id: 28,
     value: 2,
     suit: "clubs",
-    faceUpImg: require("../assets/clubs/2C.png")
+    faceUpImg: require("../assets/clubs/2C.png"),
   },
   {
     faceUp: true,
+    id: 29,
     value: 3,
     suit: "clubs",
-    faceUpImg: require("../assets/clubs/3C.png")
+    faceUpImg: require("../assets/clubs/3C.png"),
   },
   {
     faceUp: true,
+    id: 30,
     value: 4,
     suit: "clubs",
-    faceUpImg: require("../assets/clubs/4C.png")
+    faceUpImg: require("../assets/clubs/4C.png"),
   },
   {
     faceUp: true,
+    id: 31,
     value: 5,
     suit: "clubs",
-    faceUpImg: require("../assets/clubs/5C.png")
+    faceUpImg: require("../assets/clubs/5C.png"),
   },
   {
     faceUp: true,
+    id: 32,
     value: 6,
     suit: "clubs",
-    faceUpImg: require("../assets/clubs/6C.png")
+    faceUpImg: require("../assets/clubs/6C.png"),
   },
   {
     faceUp: true,
+    id: 33,
     value: 7,
     suit: "clubs",
-    faceUpImg: require("../assets/clubs/7C.png")
+    faceUpImg: require("../assets/clubs/7C.png"),
   },
   {
     faceUp: true,
+    id: 34,
     value: 8,
     suit: "clubs",
-    faceUpImg: require("../assets/clubs/8C.png")
+    faceUpImg: require("../assets/clubs/8C.png"),
   },
   {
     faceUp: true,
+    id: 35,
     value: 9,
     suit: "clubs",
-    faceUpImg: require("../assets/clubs/9C.png")
+    faceUpImg: require("../assets/clubs/9C.png"),
   },
   {
     faceUp: true,
+    id: 36,
     value: 10,
     suit: "clubs",
-    faceUpImg: require("../assets/clubs/10C.png")
+    faceUpImg: require("../assets/clubs/10C.png"),
   },
   {
     faceUp: true,
+    id: 37,
     value: 11,
     suit: "clubs",
-    faceUpImg: require("../assets/clubs/11JC.png")
+    faceUpImg: require("../assets/clubs/11JC.png"),
   },
   {
     faceUp: true,
+    id: 38,
     value: 12,
     suit: "clubs",
-    faceUpImg: require("../assets/clubs/12QC.png")
+    faceUpImg: require("../assets/clubs/12QC.png"),
   },
   {
     faceUp: true,
+    id: 39,
     value: 13,
     suit: "clubs",
-    faceUpImg: require("../assets/clubs/KC.png")
+    faceUpImg: require("../assets/clubs/KC.png"),
   },
   {
     faceUp: true,
+    id: 40,
     value: 1,
     suit: "diamonds",
-    faceUpImg: require("../assets/diamonds/1AD.png")
+    faceUpImg: require("../assets/diamonds/1AD.png"),
   },
   {
     faceUp: true,
+    id: 41,
     value: 2,
     suit: "diamonds",
-    faceUpImg: require("../assets/diamonds/2D.png")
+    faceUpImg: require("../assets/diamonds/2D.png"),
   },
   {
     faceUp: true,
+    id: 42,
     value: 3,
     suit: "diamonds",
-    faceUpImg: require("../assets/diamonds/3D.png")
+    faceUpImg: require("../assets/diamonds/3D.png"),
   },
   {
     faceUp: true,
+    id: 43,
     value: 4,
     suit: "diamonds",
-    faceUpImg: require("../assets/diamonds/4D.png")
+    faceUpImg: require("../assets/diamonds/4D.png"),
   },
   {
     faceUp: true,
+    id: 44,
     value: 5,
     suit: "diamonds",
-    faceUpImg: require("../assets/diamonds/5D.png")
+    faceUpImg: require("../assets/diamonds/5D.png"),
   },
   {
     faceUp: true,
+    id: 45,
     value: 6,
     suit: "diamonds",
-    faceUpImg: require("../assets/diamonds/6D.png")
+    faceUpImg: require("../assets/diamonds/6D.png"),
   },
   {
     faceUp: true,
+    id: 46,
     value: 7,
     suit: "diamonds",
-    faceUpImg: require("../assets/diamonds/7D.png")
+    faceUpImg: require("../assets/diamonds/7D.png"),
   },
   {
     faceUp: true,
+    id: 47,
     value: 8,
     suit: "diamonds",
-    faceUpImg: require("../assets/diamonds/8D.png")
+    faceUpImg: require("../assets/diamonds/8D.png"),
   },
   {
     faceUp: true,
+    id: 48,
     value: 9,
     suit: "diamonds",
-    faceUpImg: require("../assets/diamonds/9D.png")
+    faceUpImg: require("../assets/diamonds/9D.png"),
   },
   {
     faceUp: true,
+    id: 49,
     value: 10,
     suit: "diamonds",
-    faceUpImg: require("../assets/diamonds/10D.png")
+    faceUpImg: require("../assets/diamonds/10D.png"),
   },
   {
     faceUp: true,
+    id: 50,
     value: 11,
     suit: "diamonds",
-    faceUpImg: require("../assets/diamonds/11JD.png")
+    faceUpImg: require("../assets/diamonds/11JD.png"),
   },
   {
     faceUp: true,
+    id: 51,
     value: 12,
     suit: "diamonds",
-    faceUpImg: require("../assets/diamonds/12QD.png")
+    faceUpImg: require("../assets/diamonds/12QD.png"),
   },
   {
     faceUp: true,
+    id: 52,
     value: 13,
     suit: "diamonds",
-    faceUpImg: require("../assets/diamonds/KD.png")
+    faceUpImg: require("../assets/diamonds/KD.png"),
   },
 ]);
 
 export default produce((state, action) => {
   switch (action.type) {
     case REMOVE_CARDS:
-      state.splice(state.length - 1 - action.payload, 10);
+      state.splice(state.length - 1 - action.payload, action.payload);
       return;
     default:
       return;
