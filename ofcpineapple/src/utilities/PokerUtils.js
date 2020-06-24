@@ -49,7 +49,7 @@ class PokerUtils {
 
   static hasFullHouse(cards) {
     // 3 cards of same value AND 2 cards of same value
-    return hasPair(cards) && hasThreeOfAKind(cards);
+    return this.hasPair(cards) && this.hasThreeOfAKind(cards);
   }
 
   static hasFourOfAKind(cards) {
@@ -62,6 +62,36 @@ class PokerUtils {
   static hasStraightFlush(cards) {
     // all 5 cards have same suit AND are in consecutive value order
     return this.hasFlush(cards) && this.hasStraight(cards);
+  }
+
+  static breakTie(playerOneCards, playerTwoCards) {
+    if (playerOneCards[0].value > playerTwoCards[0].value) {
+      return "PLAYER1";
+    } else if (playerOneCards[0].value < playerTwoCards[0].value) {
+      return "PLAYER2";
+    } else return "TIE";
+  }
+
+  static tieBreaker(playerOneCards, playerTwoCards, handType) {
+    if (handType === "fullHouse") {
+      let player1 = countValuesInHand(playerOneCards);
+      let player2 = countValuesInHand(playerTwoCards);
+      let player1Trips;
+      let player2Trips;
+      for (let key in player1) {
+        if (player1[key] === 3) {
+          player1Trips = key;
+        }
+      }
+      for (let key in player2) {
+        if (player2[key] === 3) {
+          player2Trips = key;
+        }
+      }
+      if (player1Trips > player2Trips) {
+        return "PLAYER1";
+      } else return "PLAYER2";
+    } else return this.breakTie(playerOneCards, playerTwoCards);
   }
 
   static determineBestHand(playerOneCards, playerTwoCards) {
