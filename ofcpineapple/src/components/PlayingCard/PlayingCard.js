@@ -6,7 +6,8 @@ import { connect } from "react-redux";
 
 const PlayingCard = ({ card, className, data }) => {
   const handleLocationClick = () => {
-  
+    console.log(getLocationInfo(card.id, data));
+    getLocationInfo(card.id, data);
   };
   if (card) {
     return (
@@ -48,8 +49,8 @@ const PlayingCard = ({ card, className, data }) => {
 
 const mapStateToProps = (state) => {
   return {
-    data: state.cardStatus
-  }
-}
+    data: state.cardStatus,
+  };
+};
 
 export default connect(mapStateToProps, null)(PlayingCard);
