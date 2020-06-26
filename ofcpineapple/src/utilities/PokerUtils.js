@@ -71,11 +71,11 @@ class PokerUtils {
       return "PLAYER2";
     } else return "TIE";
   }
-
+ 
   static tieBreaker(playerOneCards, playerTwoCards, handType) {
     if (handType === "fullHouse") {
-      let player1 = countValuesInHand(playerOneCards);
-      let player2 = countValuesInHand(playerTwoCards);
+      let player1 = this.countValuesInHand(playerOneCards);
+      let player2 = this.countValuesInHand(playerTwoCards);
       let player1Trips;
       let player2Trips;
       for (let key in player1) {
@@ -95,6 +95,7 @@ class PokerUtils {
   }
 
   static determineBestHand(playerOneCards, playerTwoCards) {
+    let hands = ['pair', 'threeOfAKind', 'straight', 'flush', 'fullHouse', 'fourOfAKind', 'straightFlush']
     // pair < 3 of a kind < straight < flush < full house < 4 of a kind < straight flush
     // 1. check for possible poker hands
     let playerOneResults = [
@@ -128,7 +129,7 @@ class PokerUtils {
     let playerOneTrueIndex = playerOneResults.lastIndexOf(true);
     let playerTwoTrueIndex = playerTwoResults.lastIndexOf(true);
     if (playerOneTrueIndex === playerTwoTrueIndex) {
-      return "TIE";
+      return PokerUtils.tieBreaker(p1, p2, hands[playerOneTrueIndex]); // use tieBreaker HERE!!!!
     } else if (playerOneTrueIndex < playerTwoTrueIndex) {
       return "PLAYER2";
     } else return "PLAYER1";
