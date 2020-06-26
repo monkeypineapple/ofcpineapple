@@ -13,6 +13,8 @@ import PlayerTwoRowOne from "../PlayerTwoRowOne/PlayerTwoRowOne.js";
 import { Row, Col } from "react-bootstrap";
 import "./GameBoard.css";
 import Hand from "../Hand/Hand";
+import DisplayHand from "../displayHand/DisplayHand";
+import PokerUtils from "../../utilities/PokerUtils.js";
 
 const GameBoard = ({ deck, initialDeal, fillHand, removeCards, board }) => {
   const handleInitialDealButtonClick = () => {
@@ -61,11 +63,26 @@ const GameBoard = ({ deck, initialDeal, fillHand, removeCards, board }) => {
           <Row className="p1-r3">
             <PlayerOneRowThree cards={board.playerOne.rowThree} />
           </Row>
+          <br />
+          <Row>
+            <h2 style={{ color: "yellow", fontStyle: "bold" }}>Player 1</h2>
+          </Row>
+          <Row>
+          <h3 style={{ color: "yellow", fontStyle: "bold" }}>Top Hand:&nbsp;</h3>
+            <DisplayHand handName={"placeHolder"}></DisplayHand>
+          </Row>
         </Col>
         <Col></Col>
         <Col className="p2-r3-col">
           <Row className="p2-r3">
             <PlayerTwoRowThree cards={board.playerTwo.rowThree} />
+          </Row>
+          <br />
+          <Row>
+            <h2 style={{ color: "yellow", fontStyle: "bold" }}>Player 2</h2>
+          </Row>
+          <Row>
+            <DisplayHand handName={"placeHolder"}></DisplayHand>
           </Row>
         </Col>
       </Row>
@@ -73,18 +90,18 @@ const GameBoard = ({ deck, initialDeal, fillHand, removeCards, board }) => {
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     deck: state.deck,
-    board: state.cardStatus
+    board: state.cardStatus,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    initialDeal: deck => dispatch(initialDeal(deck)),
-    removeCards: n => dispatch(removeCards(n)),
-    fillHand: hand => dispatch(fillHand(hand))
+    initialDeal: (deck) => dispatch(initialDeal(deck)),
+    removeCards: (n) => dispatch(removeCards(n)),
+    fillHand: (hand) => dispatch(fillHand(hand)),
   };
 };
 
