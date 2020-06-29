@@ -1,10 +1,8 @@
-
-
-export const determineColumnContent = (slot) => {
-  if (slot.isBackgroundSpace) {
-    return null;
-  } else return slot.card;
-};
+// export const determineColumnContent = (slot) => {
+//   if (slot.isBackgroundSpace) {
+//     return null;
+//   } else return slot.card;
+// };
 
 const isHandCard = (id, data) => {
   let obj = data.hand.handCards;
@@ -28,9 +26,7 @@ const findRow = (key) => {
 
 const findRowCol = (obj, id) => {
   for (let key in obj) {
-    
     if (obj[key].id === id) {
-  
       return parseInt(key);
     }
   }
@@ -60,7 +56,7 @@ const getRowCol = (id, data, locationObj) => {
   let col;
   let row;
   let playerOne = determinePlayer(id, data, true);
-  
+
   let playerTwo = determinePlayer(id, data, false);
 
   if (locationObj.isHand) {

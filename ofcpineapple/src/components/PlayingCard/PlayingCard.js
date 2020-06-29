@@ -3,12 +3,14 @@ import { Card } from "react-bootstrap";
 import "./PlayingCard.css";
 import { getLocationInfo } from "../../utilities/utils";
 import { connect } from "react-redux";
-import { setSelectedCard } from "../../actions/cardStatus";
+import { setSelectedCard, addPlayerCard } from "../../actions/cardStatus";
 
-const PlayingCard = ({ card, className, data, setSelectedCard }) => {
+const PlayingCard = ({ card, className, data, setSelectedCard, addPlayerCard }) => {
   const handleLocationClick = () => {
-    let cardLocation = getLocationInfo(card.id, data);
-    setSelectedCard({ card: card });
+    // let cardLocation = getLocationInfo(card.id, data);
+      setSelectedCard({ card: card });
+      addPlayerCard({ card: data.selectedCard.card });
+  
   };
 
   const highlightSelectedCard = () => {
@@ -27,7 +29,11 @@ const PlayingCard = ({ card, className, data, setSelectedCard }) => {
             : "card-image-styles" + " " + className
         }
       >
-        <img alt="" className={"card-image-styles" + ' ' + highlightSelectedCard()} src={card.faceUpImg} />
+        <img
+          alt=""
+          className={"card-image-styles" + " " + highlightSelectedCard()}
+          src={card.faceUpImg}
+        />
       </Card>
     );
   } else {
@@ -59,6 +65,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     setSelectedCard: (cardInfo) => dispatch(setSelectedCard(cardInfo)),
+    addPlayerCard: (info) => dispatch(addPlayerCard(info)),
   };
 };
 

@@ -81,32 +81,28 @@ export default produce((state, action) => {
       state.playerOne.rowThree["1"] = action.payload[0];
       state.playerOne.rowThree["2"] = action.payload[1];
       state.playerOne.rowThree["3"] = action.payload[2];
-
       state.playerOne.rowThree["4"] = action.payload[3];
-
       state.playerOne.rowThree["5"] = action.payload[4];
-
       state.playerTwo.rowThree["1"] = action.payload[5];
-
       state.playerTwo.rowThree["2"] = action.payload[6];
-
       state.playerTwo.rowThree["3"] = action.payload[7];
-
       state.playerTwo.rowThree["4"] = action.payload[8];
-
       state.playerTwo.rowThree["5"] = action.payload[9];
 
       return;
 
     case REMOVE_PLAYER_CARD:
+      // change location of selectedCard slot to 'null'
       return state;
     case ADD_PLAYER_CARD:
+      // change data of selected slot location to 'selectedCard' (state)
+      if(state.selectedCard.card){
+        action.payload.card = state.selectedCard.card
+      }
       return state;
     case FILL_HAND: // [{}, {}]
       state.hand.handCards["1"] = action.payload[0];
-
       state.hand.handCards["2"] = action.payload[1];
-
       state.hand.handCards["3"] = action.payload[2];
 
       return;
@@ -121,7 +117,7 @@ export default produce((state, action) => {
       ) {
         state.selectedCard.card = null;
       } else {
-        state.selectedCard.card = action.payload.card
+        state.selectedCard.card = action.payload.card;
       }
 
       return;
