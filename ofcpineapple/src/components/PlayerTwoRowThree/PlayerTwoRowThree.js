@@ -8,19 +8,49 @@ const PlayerTwoRowThree = props => {
   return (
     <>
       <Col className="col-margins">
-        <PlayingCard card={props.cards["1"]} />
+        <PlayingCard slotInfo={{
+            isHand: false,
+            isPlayerOne: false,
+            isDiscard: false,
+            row: 3,
+            col: 1,
+          }} card={props.cards["1"]} />
       </Col>
       <Col className="col-margins">
-        <PlayingCard card={props.cards["2"]} />
+        <PlayingCard slotInfo={{
+            isHand: false,
+            isPlayerOne: false,
+            isDiscard: false,
+            row: 3,
+            col: 2,
+          }} card={props.cards["2"]} />
       </Col>
       <Col className="col-margins">
-        <PlayingCard card={props.cards["3"]} />
+        <PlayingCard slotInfo={{
+            isHand: false,
+            isPlayerOne: false,
+            isDiscard: false,
+            row: 3,
+            col: 3,
+          }} card={props.cards["3"]} />
       </Col>
       <Col className="col-margins">
-        <PlayingCard card={props.cards["4"]} />
+        <PlayingCard slotInfo={{
+            isHand: false,
+            isPlayerOne: false,
+            isDiscard: false,
+            row: 3,
+            col: 4,
+          }} card={props.cards["4"]} />
       </Col>
       <Col className="col-margins">
-        <PlayingCard card={props.cards["5"]} />
+        <PlayingCard slotInfo={{
+            isHand: false,
+            isPlayerOne: false,
+            isDiscard: false,
+            row: 3,
+            col: 5,
+          }} card={props.cards["5"]} />
       </Col>
     </>
   );

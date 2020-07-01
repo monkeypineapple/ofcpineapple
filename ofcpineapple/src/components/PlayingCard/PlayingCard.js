@@ -3,19 +3,29 @@ import { Card } from "react-bootstrap";
 import "./PlayingCard.css";
 import { getLocationInfo } from "../../utilities/utils";
 import { connect } from "react-redux";
-import { setSelectedCard, addPlayerCard } from "../../actions/cardStatus";
+import { setSelectedCard, addPlayerCard, setSelectedSlot } from "../../actions/cardStatus";
 
-const PlayingCard = ({ card, className, data, setSelectedCard, addPlayerCard }) => {
+const PlayingCard = ({
+  card,
+  className,
+  data,
+  setSelectedCard,
+  addPlayerCard,
+  slotInfo,
+  setSelectedSlot
+}) => {
   const handleLocationClick = () => {
-    // let cardLocation = getLocationInfo(card.id, data);
-    // console.log(cardLocation)
-    if(data.selectedCard.card) {
-      addPlayerCard({ card: data.selectedCard.card })
+     
+    if (data.selectedCard.card) {
+      // let cardLocation = getLocationInfo(slotInfo, data);
+      // setSelectedSlot({card: card})
+      if(slotInfo) {
+      addPlayerCard({ location: slotInfo });  
+      }
+      // console.log(card, "card")
     } else {
       setSelectedCard({ card: card });
     }
-   
-   
   };
 
   const highlightSelectedCard = () => {
@@ -34,7 +44,11 @@ const PlayingCard = ({ card, className, data, setSelectedCard, addPlayerCard }) 
             : "card-image-styles" + " " + className
         }
       >
-        <img alt="" className={"card-image-styles" + ' ' + highlightSelectedCard()} src={card.faceUpImg} />
+        <img
+          alt=""
+          className={"card-image-styles" + " " + highlightSelectedCard()}
+          src={card.faceUpImg}
+        />
       </Card>
     );
   } else {
@@ -67,6 +81,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     setSelectedCard: (cardInfo) => dispatch(setSelectedCard(cardInfo)),
     addPlayerCard: (info) => dispatch(addPlayerCard(info)),
+    setSelectedSlot: (info) => dispatch(setSelectedSlot(info))
   };
 };
 

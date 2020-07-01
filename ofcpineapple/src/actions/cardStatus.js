@@ -8,6 +8,7 @@ import {
   ADD_PLAYER_CARD,
   CLEAR_PLAYER_CARDS,
   GENERATE_RANDOM_BOARD,
+  SET_SELECTED_SLOT
 } from "./types.js";
 
 export const initialDeal = (deck) => ({
@@ -44,6 +45,11 @@ export const setSelectedCard = (cardInfo) => ({
   type: SET_SELECTED_CARD,
   payload: cardInfo,
 });
+
+export const setSelectedSlot = (info) => ({
+  type: SET_SELECTED_SLOT,
+  payload: info
+})
 
 // export const clearPlayerCards = () => ({
 //   type: CLEAR_PLAYER_CARDS

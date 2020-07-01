@@ -60,8 +60,9 @@ const getRowCol = (id, data, locationObj) => {
   let col;
   let row;
   let playerOne = determinePlayer(id, data, true);
-  
   let playerTwo = determinePlayer(id, data, false);
+
+
 
   if (locationObj.isHand) {
     for (let key in data.hand.handCards) {
@@ -79,6 +80,7 @@ const getRowCol = (id, data, locationObj) => {
     locationObj["row"] = playerTwo.row;
     locationObj["col"] = playerTwo.col;
   }
+
 };
 
 export const getLocationInfo = (id, data) => {
@@ -92,3 +94,5 @@ export const getLocationInfo = (id, data) => {
   getRowCol(id, data, location);
   return location;
 };
+
+

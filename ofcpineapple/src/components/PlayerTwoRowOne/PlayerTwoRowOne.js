@@ -10,13 +10,31 @@ const PlayerTwoRowOne = (props) => {
       <Col className="col-margins"></Col>
       <Col className="col-margins"></Col>
       <Col className="col-margins">
-        <PlayingCard card={props.cards["1"]} />
+        <PlayingCard slotInfo={{
+            isHand: false,
+            isPlayerOne: false,
+            isDiscard: false,
+            row: 1,
+            col: 1,
+          }} card={props.cards["1"]} />
       </Col>
       <Col className="col-margins">
-        <PlayingCard card={props.cards["2"]} />
+        <PlayingCard slotInfo={{
+            isHand: false,
+            isPlayerOne: false,
+            isDiscard: false,
+            row: 1,
+            col: 2,
+          }} card={props.cards["2"]} />
       </Col>
       <Col className="col-margins">
-        <PlayingCard card={props.cards["3"]} />
+        <PlayingCard slotInfo={{
+            isHand: false,
+            isPlayerOne: false,
+            isDiscard: false,
+            row: 1,
+            col: 3,
+          }} card={props.cards["3"]} />
       </Col>
     </>
   );
