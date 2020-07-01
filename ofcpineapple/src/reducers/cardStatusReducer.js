@@ -5,10 +5,14 @@ import {
   REMOVE_PLAYER_CARD,
   FILL_HAND,
   ADD_PLAYER_CARD,
+  SET_SELECTED_CARD,
 } from "../actions/types";
 import produce from "immer";
 
 const initialCardStatusState = {
+  selectedCard: {
+    card: null,
+  },
   hand: {
     handCards: { 1: null, 2: null, 3: null },
   },
@@ -96,7 +100,9 @@ export default produce((state, action) => {
     case REMOVE_PLAYER_CARD:
       return state;
     case ADD_PLAYER_CARD:
-      return state;
+      console.log(action.payload)
+      
+      return;
     case FILL_HAND: // [{}, {}]
       state.hand.handCards["1"] = action.payload[0];
 
@@ -109,6 +115,17 @@ export default produce((state, action) => {
       return state;
     case CLEAR_HAND:
       return state;
+    case SET_SELECTED_CARD:
+      if (
+        state.selectedCard.card &&
+        action.payload.card.id === state.selectedCard.card.id
+      ) {
+        state.selectedCard.card = null;
+      } else {
+        state.selectedCard.card = action.payload.card;
+      }
+
+      return;
     default:
       return state;
   }

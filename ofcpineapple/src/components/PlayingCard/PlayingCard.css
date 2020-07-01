@@ -1,15 +1,12 @@
-.card-image-styles{
-  width:70px;
+.card-image-styles {
+  width: 70px;
   height: 80px;
-  
-
 }
 .card-image-styles:hover {
-  
   opacity: 70%;
 }
 .card-image-styles:active {
-  border: 2px solid darkgreen
+  border: 2px solid darkgreen;
 }
 .card-image-styles {
   height: 80px;
@@ -17,4 +14,9 @@
   background: transparent;
   border-width: 2px;
   border-color: grey;
+}
+.selected-card-style {
+  border-color: yellow;
+  border-width: 2px;
+  border-style: dotted;
 }
