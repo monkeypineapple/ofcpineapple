@@ -11,7 +11,6 @@ import {
 import produce from "immer";
 
 const initialCardStatusState = {
- 
   selectedCard: {
     card: null,
   },
@@ -94,13 +93,12 @@ export default produce((state, action) => {
 
     case REMOVE_PLAYER_CARD:
       return state;
-    // case SET_SELECTED_SLOT: 
+    // case SET_SELECTED_SLOT:
     // // console.log(action.payload.location, "selected slot payload")
     //   state.selectedSlot.card = action.payload
     //   // console.log(state.selectedSlot.location, "location")
     //   return;
     case ADD_PLAYER_CARD:
-
       // {location: {…}}
       // location:
       // col: 1
@@ -109,85 +107,99 @@ export default produce((state, action) => {
       // isPlayerOne: true
       // row: 1
 
-      let rowInfo = action.payload.location.row
-      let colInfo = action.payload.location.col
+      let rowInfo = action.payload.location.row;
+      let colInfo = action.payload.location.col;
 
-      if(action.payload.location.isPlayerOne) {
-        if(rowInfo === 1) {
-          if(colInfo === 1) {
-            if(state.playerOne.rowOne["1"] !== null) {
-            state.playerOne.rowOne["1"] = state.selectedCard.card
-          }
-          } else if(colInfo === 2) {
-            state.playerOne.rowOne["2"] = state.selectedCard.card
-          } else if(colInfo === 3) {
-            state.playerOne.rowOne["3"] = state.selectedCard.card
-          }
-        } else if(rowInfo === 2 ) {
-          if(colInfo === 1) {
-            state.playerOne.rowTwo["1"] = state.selectedCard.card
-          } else if(colInfo === 2) {
-            state.playerOne.rowTwo["2"] = state.selectedCard.card
-          } else if(colInfo === 3) {
-            state.playerOne.rowTwo["3"] = state.selectedCard.card
-          } else if(colInfo === 4) {
-            state.playerOne.rowTwo["4"] = state.selectedCard.card
-          } else if(colInfo === 5) {
-            state.playerOne.rowTwo["5"] = state.selectedCard.card
-          }
-        } else if(rowInfo === 3) {
-          if(colInfo === 1) {
-            if(state.playerOne.rowThree["1"] === null) {
-            state.playerOne.rowThree["1"] = state.selectedCard.card
+      if (action.payload.location.isPlayerOne) {
+        if (rowInfo === 1) {
+          if (colInfo === 1) {
+            if (state.playerOne.rowOne["1"] !== null) {
+              state.playerOne.rowOne["1"] = state.selectedCard.card;
             }
-          } else if(colInfo === 2) {
-            state.playerOne.rowThree["2"] = state.selectedCard.card
-          } else if(colInfo === 3) {
-            state.playerOne.rowThree["3"] = state.selectedCard.card
-          } else if(colInfo === 4) {
-            state.playerOne.rowThree["4"] = state.selectedCard.card
-          } else if(colInfo === 5) {
-            state.playerOne.rowThree["5"] = state.selectedCard.card
+          } else if (colInfo === 2) {
+            if (state.playerOne.rowOne["2"] !== null) {
+              state.playerOne.rowOne["2"] = state.selectedCard.card;
+            }
+          } else if (colInfo === 3) {
+            if (state.playerOne.rowOne["3"] !== null) {
+              state.playerOne.rowOne["3"] = state.selectedCard.card;
+            }
+          }
+        } else if (rowInfo === 2) {
+          if (colInfo === 1) {
+            if (state.playerOne.rowTwo["1"] !== null) {
+              state.playerOne.rowTwo["1"] = state.selectedCard.card;
+            }
+          } else if (colInfo === 2) {
+            if (state.playerOne.rowTwo["2"] !== null) {
+              state.playerOne.rowTwo["2"] = state.selectedCard.card;
+            }
+          } else if (colInfo === 3) {
+            if (state.playerOne.rowTwo["3"] !== null) {
+              state.playerOne.rowTwo["3"] = state.selectedCard.card;
+            }
+          } else if (colInfo === 4) {
+            if (state.playerOne.rowTwo["4"] !== null) {
+              state.playerOne.rowTwo["4"] = state.selectedCard.card;
+            }
+          } else if (colInfo === 5) {
+            if (state.playerOne.rowTwo["5"] !== null) {
+              state.playerOne.rowTwo["5"] = state.selectedCard.card;
+            }
+          }
+        } else if (rowInfo === 3) {
+          if (colInfo === 1) {
+            if (state.playerOne.rowThree["1"] === null) {
+              state.playerOne.rowThree["1"] = state.selectedCard.card;
+            }
+          } else if (colInfo === 2) {
+            //start
+            state.playerOne.rowThree["2"] = state.selectedCard.card;
+          } else if (colInfo === 3) {
+            state.playerOne.rowThree["3"] = state.selectedCard.card;
+          } else if (colInfo === 4) {
+            state.playerOne.rowThree["4"] = state.selectedCard.card;
+          } else if (colInfo === 5) {
+            state.playerOne.rowThree["5"] = state.selectedCard.card;
           }
         }
       } else {
-        if(rowInfo === 1) {
-          if(colInfo === 1) {
-            state.playerTwo.rowOne["1"] = state.selectedCard.card
-          } else if(colInfo === 2) {
-            state.playerTwo.rowOne["2"] = state.selectedCard.card
-          } else if(colInfo === 3) {
-            state.playerTwo.rowOne["3"] = state.selectedCard.card
+        if (rowInfo === 1) {
+          if (colInfo === 1) {
+            state.playerTwo.rowOne["1"] = state.selectedCard.card;
+          } else if (colInfo === 2) {
+            state.playerTwo.rowOne["2"] = state.selectedCard.card;
+          } else if (colInfo === 3) {
+            state.playerTwo.rowOne["3"] = state.selectedCard.card;
           }
-        } else if(rowInfo === 2 ) {
-          if(colInfo === 1) {
-            state.playerTwo.rowTwo["1"] = state.selectedCard.card
-          } else if(colInfo === 2) {
-            state.playerTwo.rowTwo["2"] = state.selectedCard.card
-          } else if(colInfo === 3) {
-            state.playerTwo.rowTwo["3"] = state.selectedCard.card
-          } else if(colInfo === 4) {
-            state.playerTwo.rowTwo["4"] = state.selectedCard.card
-          } else if(colInfo === 5) {
-            state.playerTwo.rowTwo["5"] = state.selectedCard.card
+        } else if (rowInfo === 2) {
+          if (colInfo === 1) {
+            state.playerTwo.rowTwo["1"] = state.selectedCard.card;
+          } else if (colInfo === 2) {
+            state.playerTwo.rowTwo["2"] = state.selectedCard.card;
+          } else if (colInfo === 3) {
+            state.playerTwo.rowTwo["3"] = state.selectedCard.card;
+          } else if (colInfo === 4) {
+            state.playerTwo.rowTwo["4"] = state.selectedCard.card;
+          } else if (colInfo === 5) {
+            state.playerTwo.rowTwo["5"] = state.selectedCard.card;
           }
-        } else if(rowInfo === 3) {
-          if(colInfo === 1) {
-            state.playerTwo.rowThree["1"] = state.selectedCard.card
-          } else if(colInfo === 2) {
-            state.playerTwo.rowThree["2"] = state.selectedCard.card
-          } else if(colInfo === 3) {
-            state.playerTwo.rowThree["3"] = state.selectedCard.card
-          } else if(colInfo === 4) {
-            state.playerTwo.rowThree["4"] = state.selectedCard.card
-          } else if(colInfo === 5) {
-            state.playerTwo.rowThree["5"] = state.selectedCard.card
+        } else if (rowInfo === 3) {
+          if (colInfo === 1) {
+            state.playerTwo.rowThree["1"] = state.selectedCard.card;
+          } else if (colInfo === 2) {
+            state.playerTwo.rowThree["2"] = state.selectedCard.card;
+          } else if (colInfo === 3) {
+            state.playerTwo.rowThree["3"] = state.selectedCard.card;
+          } else if (colInfo === 4) {
+            state.playerTwo.rowThree["4"] = state.selectedCard.card;
+          } else if (colInfo === 5) {
+            state.playerTwo.rowThree["5"] = state.selectedCard.card;
           }
         }
       }
-     
-     
-      console.log(action.payload)
+
+      console.log(action.payload);
       return;
     case FILL_HAND: // [{}, {}]
       state.hand.handCards["1"] = action.payload[0];
