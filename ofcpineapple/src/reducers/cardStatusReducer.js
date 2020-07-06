@@ -96,8 +96,6 @@ export default produce((state, action) => {
     // case SET_SELECTED_SLOT:
     // console.log(action.payload.location, "selected slot payload")
 
-
-     
     //   return;
     case ADD_PLAYER_CARD:
       // {location: {…}}
@@ -158,7 +156,9 @@ export default produce((state, action) => {
               state.playerOne.rowThree["2"] = state.selectedCard.card;
             }
           } else if (colInfo === 3) {
-            state.playerOne.rowThree["3"] = state.selectedCard.card;
+            if (state.playerOne.rowThree["3"] === null) {
+              state.playerOne.rowThree["3"] = state.selectedCard.card;
+            }
           } else if (colInfo === 4) {
             state.playerOne.rowThree["4"] = state.selectedCard.card;
           } else if (colInfo === 5) {
