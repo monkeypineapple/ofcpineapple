@@ -7,6 +7,7 @@ import {
   setSelectedCard,
   addPlayerCard,
   setSelectedSlot,
+  removePlayerCard
 } from "../../actions/cardStatus";
 
 const PlayingCard = ({
@@ -18,26 +19,27 @@ const PlayingCard = ({
   addPlayerCard,
   slotInfo,
   setSelectedSlot,
+  removePlayerCard
 }) => {
   const handleLocationClick = () => {
 
-    if(boardSlot) {
-      console.log(boardSlot)
-    } else {
-      console.log("no slot")
-    }
+   
+
+
     
     if (data.selectedCard.card) {
-      // let cardLocation = getLocationInfo(slotInfo, data);
-      // setSelectedSlot({card: card})
-      if (slotInfo) {
+    
+      
+      if (slotInfo && slotInfo.isHand === false && data.selectedSlot.location) {
         addPlayerCard({ location: slotInfo });
-        
+        removePlayerCard({info: data.selectedSlot.location })
       }
       // console.log(card, "card")
     } else {
      
       setSelectedCard({ card: card });
+      //info = location info = {isHand, isPlayerOne, etc}
+      setSelectedSlot({info: slotInfo})
      
     }
   };
@@ -96,6 +98,7 @@ const mapDispatchToProps = (dispatch) => {
     setSelectedCard: (cardInfo) => dispatch(setSelectedCard(cardInfo)),
     addPlayerCard: (info) => dispatch(addPlayerCard(info)),
     setSelectedSlot: (info) => dispatch(setSelectedSlot(info)),
+    removePlayerCard: (info) => dispatch(removePlayerCard(info))
   };
 };
 

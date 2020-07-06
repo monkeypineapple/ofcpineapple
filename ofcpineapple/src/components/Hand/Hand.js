@@ -8,13 +8,31 @@ function Hand({ cards }) {
     <Row>
       <Col></Col>
       <Col>
-        <PlayingCard card={cards["1"]} />
+        <PlayingCard slotInfo={{
+            isHand: true,
+            isPlayerOne: false,
+            isDiscard: false,
+            row: 1,
+            col: 1,
+          }} card={cards["1"]} />
       </Col>
       <Col>
-        <PlayingCard card={cards["2"]} />
+        <PlayingCard slotInfo={{
+            isHand: true,
+            isPlayerOne: false,
+            isDiscard: false,
+            row: 1,
+            col: 2,
+          }} card={cards["2"]} />
       </Col>
       <Col>
-        <PlayingCard card={cards["3"]} />
+        <PlayingCard slotInfo={{
+            isHand: true,
+            isPlayerOne: false,
+            isDiscard: false,
+            row: 1,
+            col: 3,
+          }} card={cards["3"]} />
       </Col>
       <Col></Col>
     </Row>
