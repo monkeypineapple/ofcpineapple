@@ -17,7 +17,7 @@ const PlayerOneRowOne = (props) => {
             isDiscard: false,
             row: 1,
             col: 1,
-          }} card={props.cards["1"]} />
+          }}  card={props.cards["1"]} />
       </Col>
       <Col className="col-margins">
         <PlayingCard

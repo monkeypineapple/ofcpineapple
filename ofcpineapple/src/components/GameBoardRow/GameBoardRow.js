@@ -22,7 +22,7 @@ const GameBoardRow = ({ deck }) => {
     <Row>
       {deck.map(card => {
           return (
-          <Col>{card ? <PlayingCard card={card} ></PlayingCard> : null }</Col>
+          <Col>{card ? <PlayingCard  card={card} ></PlayingCard> : null }</Col>
           )
       })}
     </Row>

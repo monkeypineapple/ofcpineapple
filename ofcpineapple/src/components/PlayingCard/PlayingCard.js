@@ -3,28 +3,42 @@ import { Card } from "react-bootstrap";
 import "./PlayingCard.css";
 import { getLocationInfo } from "../../utilities/utils";
 import { connect } from "react-redux";
-import { setSelectedCard, addPlayerCard, setSelectedSlot } from "../../actions/cardStatus";
+import {
+  setSelectedCard,
+  addPlayerCard,
+  setSelectedSlot,
+} from "../../actions/cardStatus";
 
 const PlayingCard = ({
+  boardSlot,
   card,
   className,
   data,
   setSelectedCard,
   addPlayerCard,
   slotInfo,
-  setSelectedSlot
+  setSelectedSlot,
 }) => {
   const handleLocationClick = () => {
-     
+
+    if(boardSlot) {
+      console.log(boardSlot)
+    } else {
+      console.log("no slot")
+    }
+    
     if (data.selectedCard.card) {
       // let cardLocation = getLocationInfo(slotInfo, data);
       // setSelectedSlot({card: card})
-      if(slotInfo) {
-      addPlayerCard({ location: slotInfo });  
+      if (slotInfo) {
+        addPlayerCard({ location: slotInfo });
+        
       }
       // console.log(card, "card")
     } else {
+     
       setSelectedCard({ card: card });
+     
     }
   };
 
@@ -81,7 +95,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     setSelectedCard: (cardInfo) => dispatch(setSelectedCard(cardInfo)),
     addPlayerCard: (info) => dispatch(addPlayerCard(info)),
-    setSelectedSlot: (info) => dispatch(setSelectedSlot(info))
+    setSelectedSlot: (info) => dispatch(setSelectedSlot(info)),
   };
 };
 
