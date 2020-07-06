@@ -113,37 +113,37 @@ export default produce((state, action) => {
       if (action.payload.location.isPlayerOne) {
         if (rowInfo === 1) {
           if (colInfo === 1) {
-            if (state.playerOne.rowOne["1"] !== null) {
+            if (state.playerOne.rowOne["1"] === null) {
               state.playerOne.rowOne["1"] = state.selectedCard.card;
             }
           } else if (colInfo === 2) {
-            if (state.playerOne.rowOne["2"] !== null) {
+            if (state.playerOne.rowOne["2"] === null) {
               state.playerOne.rowOne["2"] = state.selectedCard.card;
             }
           } else if (colInfo === 3) {
-            if (state.playerOne.rowOne["3"] !== null) {
+            if (state.playerOne.rowOne["3"] === null) {
               state.playerOne.rowOne["3"] = state.selectedCard.card;
             }
           }
         } else if (rowInfo === 2) {
           if (colInfo === 1) {
-            if (state.playerOne.rowTwo["1"] !== null) {
+            if (state.playerOne.rowTwo["1"] === null) {
               state.playerOne.rowTwo["1"] = state.selectedCard.card;
             }
           } else if (colInfo === 2) {
-            if (state.playerOne.rowTwo["2"] !== null) {
+            if (state.playerOne.rowTwo["2"] === null) {
               state.playerOne.rowTwo["2"] = state.selectedCard.card;
             }
           } else if (colInfo === 3) {
-            if (state.playerOne.rowTwo["3"] !== null) {
+            if (state.playerOne.rowTwo["3"] === null) {
               state.playerOne.rowTwo["3"] = state.selectedCard.card;
             }
           } else if (colInfo === 4) {
-            if (state.playerOne.rowTwo["4"] !== null) {
+            if (state.playerOne.rowTwo["4"] === null) {
               state.playerOne.rowTwo["4"] = state.selectedCard.card;
             }
           } else if (colInfo === 5) {
-            if (state.playerOne.rowTwo["5"] !== null) {
+            if (state.playerOne.rowTwo["5"] === null) {
               state.playerOne.rowTwo["5"] = state.selectedCard.card;
             }
           }
