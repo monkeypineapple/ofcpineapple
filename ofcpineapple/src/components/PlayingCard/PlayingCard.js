@@ -95,7 +95,10 @@ const mapDispatchToProps = (dispatch) => {
   return {
     setSelectedCard: (cardInfo) => dispatch(setSelectedCard(cardInfo)),
     addPlayerCard: (info) => dispatch(addPlayerCard(info)),
+<<<<<<< HEAD
     setSelectedSlot: (info) => dispatch(setSelectedSlot(info)),
+=======
+>>>>>>> 431a65b413235c80ed8cbf368246bc2cf50cff2f
   };
 };
 

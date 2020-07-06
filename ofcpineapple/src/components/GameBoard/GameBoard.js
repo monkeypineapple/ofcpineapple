@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Button } from "react-bootstrap";
 // import GameBoardRow from "../GameBoardRow/GameBoardRow";
 import { connect } from "react-redux";
-import { initialDeal, fillHand } from "../../actions/cardStatus";
+import { initialDeal, fillHand, setSelectedCard } from "../../actions/cardStatus";
 import { removeCards } from "../../actions/deck";
 import PlayerOneRowThree from "../PlayerOneRowThree/PlayerOneRowThree.js";
 import PlayerOneRowTwo from "../PlayerOneRowTwo/PlayerOneRowTwo.js";
@@ -16,7 +16,7 @@ import Hand from "../Hand/Hand";
 import DisplayHand from "../displayHand/DisplayHand";
 import PokerUtils from "../../utilities/PokerUtils.js";
 
-const GameBoard = ({ deck, initialDeal, fillHand, removeCards, board }) => {
+const GameBoard = ({ deck, initialDeal, fillHand, removeCards, board, selectedCard }) => {
   const handleInitialDealButtonClick = () => {
     initialDeal(deck.slice(0, 10));
     removeCards(10);
@@ -33,7 +33,7 @@ const GameBoard = ({ deck, initialDeal, fillHand, removeCards, board }) => {
       <Row className="row-one">
         <Col className="p1-r1-col">
           <Row className="p1-r1">
-            <PlayerOneRowOne cards={board.playerOne.rowOne} />
+            <PlayerOneRowOne selectedCard={selectedCard} cards={board.playerOne.rowOne} />
           </Row>
         </Col>
         <Col>
@@ -48,20 +48,20 @@ const GameBoard = ({ deck, initialDeal, fillHand, removeCards, board }) => {
       <Row className="row-two">
         <Col className="p1-r2-col">
           <Row className="p1-r2">
-            <PlayerOneRowTwo cards={board.playerOne.rowTwo} />
+            <PlayerOneRowTwo selectedCard={selectedCard} cards={board.playerOne.rowTwo} />
           </Row>
         </Col>
         <Col></Col>
         <Col className="p2-r2-col">
           <Row className="p2-r2">
-            <PlayerTwoRowTwo cards={board.playerTwo.rowTwo} />
+            <PlayerTwoRowTwo selectedCard={selectedCard} cards={board.playerTwo.rowTwo} />
           </Row>
         </Col>
       </Row>
       <Row className="row-three">
         <Col className="p1-r3-col">
           <Row className="p1-r3">
-            <PlayerOneRowThree cards={board.playerOne.rowThree} />
+            <PlayerOneRowThree selectedCard={selectedCard} cards={board.playerOne.rowThree} />
           </Row>
           <br />
           <Row>
@@ -94,6 +94,7 @@ const mapStateToProps = (state) => {
   return {
     deck: state.deck,
     board: state.cardStatus,
+    selectedCard: state.selectedCard
   };
 };
 
@@ -102,6 +103,7 @@ const mapDispatchToProps = (dispatch) => {
     initialDeal: (deck) => dispatch(initialDeal(deck)),
     removeCards: (n) => dispatch(removeCards(n)),
     fillHand: (hand) => dispatch(fillHand(hand)),
+    setSelectedCard: (cardInfo) => dispatch(setSelectedCard(cardInfo))
   };
 };
 

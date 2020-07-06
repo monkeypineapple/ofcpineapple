@@ -1,11 +1,9 @@
 import React from "react";
-import PlayingCard from "../PlayingCard/PlayingCard.js"
-import { Col } from 'react-bootstrap'
-import "../App/App.css"
-
+import PlayingCard from "../PlayingCard/PlayingCard.js";
+import { Col } from "react-bootstrap";
+import "../App/App.css";
 
 const PlayerOneRowThree = (props) => {
-  
   return (
     <>
       <Col className="col-margins"><PlayingCard slotInfo={{
@@ -44,7 +42,7 @@ const PlayerOneRowThree = (props) => {
             col: 5,
           }} card={props.cards["5"]} /></Col>
     </>
-  )
-}
+  );
+};
 
-export default PlayerOneRowThree
+export default PlayerOneRowThree;

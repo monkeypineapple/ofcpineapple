@@ -92,6 +92,7 @@ export default produce((state, action) => {
       return;
 
     case REMOVE_PLAYER_CARD:
+      // change location of selectedCard slot to 'null'
       return state;
     // case SET_SELECTED_SLOT:
     // console.log(action.payload.location, "selected slot payload")

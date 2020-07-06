@@ -42,6 +42,7 @@ export const fillHand = (hand) => ({
 });
 
 export const setSelectedCard = (cardInfo) => ({
+  
   type: SET_SELECTED_CARD,
   payload: cardInfo,
 });
