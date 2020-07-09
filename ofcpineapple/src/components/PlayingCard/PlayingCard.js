@@ -34,11 +34,11 @@ const PlayingCard = ({
         addPlayerCard({ location: slotInfo });
         removePlayerCard({info: data.selectedSlot.location })
       }
-      // console.log(card, "card")
+     
     } else {
      
       setSelectedCard({ card: card });
-      //info = location info = {isHand, isPlayerOne, etc}
+    
       setSelectedSlot({info: slotInfo})
      
     }
