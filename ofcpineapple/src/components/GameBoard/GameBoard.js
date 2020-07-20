@@ -28,8 +28,8 @@ const GameBoard = ({ deck, initialDeal, fillHand, removeCards, board, selectedCa
 
   return (
     <Container fluid>
-      <Button onClick={handleInitialDealButtonClick}>DEAL!</Button>
-      <Button onClick={handleFillHandClick}>Fill Hand!</Button>
+      <Button style={{marginBottom: "10px", marginRight:"10px", marginLeft:"44%"}} onClick={handleInitialDealButtonClick}>DEAL!</Button>
+      <Button style={{marginBottom: "10px"}} onClick={handleFillHandClick}>Fill Hand!</Button>
       <Row className="row-one">
         <Col className="p1-r1-col">
           <Row className="p1-r1">
@@ -51,7 +51,7 @@ const GameBoard = ({ deck, initialDeal, fillHand, removeCards, board, selectedCa
             <PlayerOneRowTwo selectedCard={selectedCard} cards={board.playerOne.rowTwo} />
           </Row>
         </Col>
-        <Col style={{textAlign:"center"}} ><Button > Turn Button </Button></Col>
+        <Col style={{textAlign:"center", paddingTop:"10px"}} ><Button > Turn Button </Button></Col>
         <Col className="p2-r2-col">
           <Row className="p2-r2">
             <PlayerTwoRowTwo selectedCard={selectedCard} cards={board.playerTwo.rowTwo} />
