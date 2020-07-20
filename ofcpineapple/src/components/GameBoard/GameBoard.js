@@ -51,7 +51,7 @@ const GameBoard = ({ deck, initialDeal, fillHand, removeCards, board, selectedCa
             <PlayerOneRowTwo selectedCard={selectedCard} cards={board.playerOne.rowTwo} />
           </Row>
         </Col>
-        <Col></Col>
+        <Col style={{textAlign:"center"}} ><Button > Turn Button </Button></Col>
         <Col className="p2-r2-col">
           <Row className="p2-r2">
             <PlayerTwoRowTwo selectedCard={selectedCard} cards={board.playerTwo.rowTwo} />
