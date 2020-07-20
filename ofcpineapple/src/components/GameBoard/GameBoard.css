@@ -61,3 +61,11 @@
   margin-left: 5px !important;
   margin-right: 5px !important;
 }
+.btn-primary {
+  color: black;
+  background-color: yellow;
+  border-color: black;
+}
+.btn-primary :hover {
+  background-color: lightgray;
+}
