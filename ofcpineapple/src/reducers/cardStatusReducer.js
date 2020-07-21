@@ -236,8 +236,7 @@ export default produce((state, action) => {
             }
           }
         }
-      } 
-      
+      }
 
       return state;
     case SET_SELECTED_SLOT:
