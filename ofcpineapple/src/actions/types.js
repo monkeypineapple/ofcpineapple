@@ -13,3 +13,7 @@ export const CLEAR_PLAYER_CARDS = "CLEAR_PLAYER_CARDS";
 export const GENERATE_RANDOM_BOARD = "GENERATE_RANDOM_BOARD";
 export const SET_SELECTED_CARD = "SET_SELECTED_CARD";
 export const SET_SELECTED_SLOT = "SET_SELECTED_SLOT";
+
+
+//turnStatus reducers
+export const CHANGE_TURN = "CHANGE_TURN"
