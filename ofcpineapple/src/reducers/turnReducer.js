@@ -1,7 +1,16 @@
 //will handle turn state 
 
-  //im thinking somthing like: turnStatus: { turn1: bool, playerOne: bool }  -> Once turn 1 is over,
-  // the only cards moveable are from the hand (I think)
-  //then obv playerOne being true will give availablity to player ones area and vice versa for P2
+
+
+
+  //we can invrement turn based on the buttons being pushed. If turn : 1, then we know certain things
+  //if not turn 1 then we know other things, otherwise I think we just need 
+  //to know which players turn it is...
+  
+
+  const initialTurnStatusState = {
+    turn:0,
+    playerOne: false
+  }
 
   
